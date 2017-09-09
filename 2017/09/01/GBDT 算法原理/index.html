@@ -95,13 +95,13 @@
 
 
 
-<meta name="description" content="GBDT 算法原理 泰勒公式介绍  公式 \[f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}\]  一阶泰勒展开： \[f(x)\approx f(x_{0})+{f}&amp;#39;(x_{0})(x-x_{0})\] 二阶泰勒展开： \[f(x)\approx f(x_{0})+{f}&amp;#39;(x_{0})(">
+<meta name="description" content="GBDT 算法原理泰勒公式介绍 公式f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n} 一阶泰勒展开：f(x)\approx f(x_{0})+{f}&apos;(x_{0})(x-x_{0}) 二阶泰勒展开：f(x)\approx f(x_{0})+{f}&apos;(x_{0})(x-x_{0})+{f}&apos;&apos;(x_{0})\frac{(x-">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GBDT 算法原理">
 <meta property="og:url" content="http://yoursite.com/2017/09/01/GBDT 算法原理/index.html">
 <meta property="og:site_name" content="庄B">
-<meta property="og:description" content="GBDT 算法原理 泰勒公式介绍  公式 \[f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}\]  一阶泰勒展开： \[f(x)\approx f(x_{0})+{f}&amp;#39;(x_{0})(x-x_{0})\] 二阶泰勒展开： \[f(x)\approx f(x_{0})+{f}&amp;#39;(x_{0})(">
+<meta property="og:description" content="GBDT 算法原理泰勒公式介绍 公式f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n} 一阶泰勒展开：f(x)\approx f(x_{0})+{f}&apos;(x_{0})(x-x_{0}) 二阶泰勒展开：f(x)\approx f(x_{0})+{f}&apos;(x_{0})(x-x_{0})+{f}&apos;&apos;(x_{0})\frac{(x-">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20170828140333057">
 <meta property="og:image" content="http://img.blog.csdn.net/20170828144219734">
@@ -119,7 +119,7 @@
 <meta property="og:updated_time" content="2017-09-01T02:54:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GBDT 算法原理">
-<meta name="twitter:description" content="GBDT 算法原理 泰勒公式介绍  公式 \[f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}\]  一阶泰勒展开： \[f(x)\approx f(x_{0})+{f}&amp;#39;(x_{0})(x-x_{0})\] 二阶泰勒展开： \[f(x)\approx f(x_{0})+{f}&amp;#39;(x_{0})(">
+<meta name="twitter:description" content="GBDT 算法原理泰勒公式介绍 公式f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n} 一阶泰勒展开：f(x)\approx f(x_{0})+{f}&apos;(x_{0})(x-x_{0}) 二阶泰勒展开：f(x)\approx f(x_{0})+{f}&apos;(x_{0})(x-x_{0})+{f}&apos;&apos;(x_{0})\frac{(x-">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170828140333057">
 
 
@@ -382,165 +382,165 @@
       
 
       
-        <h1 id="gbdt-算法原理">GBDT 算法原理</h1>
-<h2 id="泰勒公式介绍">泰勒公式介绍</h2>
-<ul>
-<li><font size="5">公式</font> <span class="math display">\[f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}\]</span>
-<ul>
-<li>一阶泰勒展开： <span class="math display">\[f(x)\approx f(x_{0})+{f}&#39;(x_{0})(x-x_{0})\]</span></li>
-<li>二阶泰勒展开： <span class="math display">\[f(x)\approx f(x_{0})+{f}&#39;(x_{0})(x-x_{0})+{f}&#39;&#39;(x_{0})\frac{(x-x_{0})^2}{2}\]</span></li>
-<li>迭代形式：假设 <span class="math inline">\(x^{t}=x^{t-1}+\Delta x\)</span> 将 <span class="math inline">\(f(t^{t})在x^{t-1}\)</span> 处进行泰勒展开
-<span class="math display">\[\begin{align*}
-     f(x^{t})&amp;=f(x^{t-1}+\Delta x) \\
-     &amp;\approx f(x^{t-1})+{f}&#39;(x^{t-1})\Delta x+{f}&#39;&#39;(x^{t-1})\frac{\Delta x^{2}}{2} 
-\end{align*}\]</span></li>
-</ul></li>
+        <h1 id="GBDT-算法原理"><a href="#GBDT-算法原理" class="headerlink" title="GBDT 算法原理"></a>GBDT 算法原理</h1><h2 id="泰勒公式介绍"><a href="#泰勒公式介绍" class="headerlink" title="泰勒公式介绍"></a>泰勒公式介绍</h2><ul>
+<li><font size="5">公式</font><script type="math/tex; mode=display">f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}</script><ul>
+<li>一阶泰勒展开：<script type="math/tex; mode=display">f(x)\approx f(x_{0})+{f}'(x_{0})(x-x_{0})</script></li>
+<li>二阶泰勒展开：<script type="math/tex; mode=display">f(x)\approx f(x_{0})+{f}'(x_{0})(x-x_{0})+{f}''(x_{0})\frac{(x-x_{0})^2}{2}</script></li>
+<li>迭代形式：假设 $x^{t}=x^{t-1}+\Delta x$   将   $f(t^{t})在x^{t-1}$   处进行泰勒展开<br>\begin{align*}<pre><code>   f(x^{t})&amp;=f(x^{t-1}+\Delta x) \\
+   &amp;\approx f(x^{t-1})+{f}&#39;(x^{t-1})\Delta x+{f}&#39;&#39;(x^{t-1})\frac{\Delta x^{2}}{2} 
+</code></pre>\end{align*}</li>
 </ul>
-<h2 id="梯度下降法介绍">梯度下降法介绍</h2>
-在机器学习任务中，需要最小化随时函数 <span class="math inline">\(L(\theta)\)</span>,其中 <span class="math inline">\(\theta\)</span> 是要求解的模型参数。梯度下降法常用来求解这种无约束最优化问题，它是一种迭代方法:选取初值<span class="math inline">\(\theta^0\)</span>，不断迭代，更新<span class="math inline">\(\theta\)</span>的值，进行损失函数的极小化。 - 迭代公式： <span class="math inline">\(\theta^{t}=\theta^{t-1}+\Delta\theta\)</span> - 将 <span class="math inline">\(L(\theta^{t})\)</span> 在<span class="math inline">\(\theta^{t-1}\)</span>处进行一阶泰勒展开：
-<span class="math display">\[\begin{align*}
-             L(\theta^t)&amp;=L(\theta^{t-1}+\Delta\theta)\\
-             &amp;\approx L(\theta^{t-1})+{L}&#39;(\theta^{t-1})\Delta\theta
-\end{align*}\]</span>
-<ul>
-<li>要使得<span class="math inline">\(L(\theta^{t})\)</span>&lt;<span class="math inline">\(L(\theta^{t-1})\)</span>,可取：<span class="math inline">\(\Delta\theta=-\alpha{L}’(\theta^{t-1})\)</span>，则：<span class="math inline">\(\theta^t=\theta^{t-1}-\alpha{L}&#39;(\theta^{t-1})\)</span> 这里<span class="math inline">\(\alpha\)</span>是步长，可以通过line search 确定，但是一般直接赋一直小的数。 ## 牛顿法</li>
-<li>将<span class="math inline">\(L(\theta^t)\)</span> 在<span class="math inline">\(\theta^{t-1}\)</span>处进行二阶泰勒展开： <span class="math display">\[L(\theta^t)\approx L(\theta^{t-1})+{L}&#39;(\theta^{t-1})\Delta\theta+{L&#39;&#39;}(\theta^{t-1})\frac{\Delta\theta^2}{2}\]</span> 为了简化分析过程，假设参数是标量（即<span class="math inline">\(\theta\)</span>只有一维），则可将一阶和二阶导数分别记为<span class="math inline">\(g\)</span>和<span class="math inline">\(h\)</span>： <span class="math display">\[L(\theta^t)\approx L(\theta^{t-1})+g\Delta\theta+h\frac{\Delta\theta^2}{2}\]</span></li>
-<li>要使得<span class="math inline">\(L(\theta^t)\)</span>极小，即让<span class="math inline">\(g\)</span>和<span class="math inline">\(h\)</span>: <span class="math display">\[L(\theta^t)\approx L(\theta^{t-1})+g\Delta\theta+h\frac{\Delta\theta^2}{2}\]</span></li>
-<li>要使得<span class="math inline">\(L(\theta)\)</span>极小，即让 <span class="math inline">\(g\Delta\theta+h\frac{\theta^{2}}{2}\)</span> 极小，可令: <span class="math display">\[\frac{\partial(g\Delta\theta+h\frac{\Delta\theta^2}{2}) }{\partial \Delta\theta}=0\]</span> 求得 <span class="math inline">\(\Delta\theta = -\frac{g}{h}\)</span>，故 <span class="math inline">\(\theta^{t}=\theta^{t-1}+\Delta\theta=\theta^{t-1}-\frac{g}{h}\)</span> 参数<span class="math inline">\(\theta 推广到向量形式，迭代公式：\theta^t=\theta^{t-1}-H^{-1}g\)</span> 这里<span class="math inline">\(H\)</span> 是海森矩阵</li>
+</li>
 </ul>
-<h2 id="从参数空间到函数空间">从参数空间到函数空间</h2>
+<h2 id="梯度下降法介绍"><a href="#梯度下降法介绍" class="headerlink" title="梯度下降法介绍"></a>梯度下降法介绍</h2><p>在机器学习任务中，需要最小化随时函数 $L(\theta)$,其中 $\theta$ 是要求解的模型参数。梯度下降法常用来求解这种无约束最优化问题，它是一种迭代方法:选取初值$\theta^0$，不断迭代，更新$\theta$的值，进行损失函数的极小化。</p>
 <ul>
+<li>迭代公式：           $\theta^{t}=\theta^{t-1}+\Delta\theta$ </li>
+<li>将 $L(\theta^{t})$ 在$\theta^{t-1}$处进行一阶泰勒展开：<br>\begin{align*}<pre><code>       L(\theta^t)&amp;=L(\theta^{t-1}+\Delta\theta)\\
+       &amp;\approx L(\theta^{t-1})+{L}&#39;(\theta^{t-1})\Delta\theta
+</code></pre>\end{align*}</li>
+<li>要使得$L(\theta^{t})$&lt;$L(\theta^{t-1})$,可取：$\Delta\theta=-\alpha{L}’(\theta^{t-1})$，则：$\theta^t=\theta^{t-1}-\alpha{L}’(\theta^{t-1})$ 这里$\alpha$是步长，可以通过line search 确定，但是一般直接赋一直小的数。<h2 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h2></li>
+<li>将$L(\theta^t)$ 在$\theta^{t-1}$处进行二阶泰勒展开：<script type="math/tex; mode=display">L(\theta^t)\approx L(\theta^{t-1})+{L}'(\theta^{t-1})\Delta\theta+{L''}(\theta^{t-1})\frac{\Delta\theta^2}{2}</script>为了简化分析过程，假设参数是标量（即$\theta$只有一维），则可将一阶和二阶导数分别记为$g$和$h$：<script type="math/tex; mode=display">L(\theta^t)\approx L(\theta^{t-1})+g\Delta\theta+h\frac{\Delta\theta^2}{2}</script></li>
+<li>要使得$L(\theta^t)$极小，即让$g$和$h$: <script type="math/tex">L(\theta^t)\approx L(\theta^{t-1})+g\Delta\theta+h\frac{\Delta\theta^2}{2}</script></li>
+<li>要使得$L(\theta)$极小，即让 $g\Delta\theta+h\frac{\theta^{2}}{2}$ 极小，可令: <script type="math/tex">\frac{\partial(g\Delta\theta+h\frac{\Delta\theta^2}{2}) }{\partial \Delta\theta}=0</script><br>求得 $\Delta\theta = -\frac{g}{h}$，故 $\theta^{t}=\theta^{t-1}+\Delta\theta=\theta^{t-1}-\frac{g}{h}$<br>参数$\theta 推广到向量形式，迭代公式：\theta^t=\theta^{t-1}-H^{-1}g$<br>这里$H$ 是海森矩阵</li>
+</ul>
+<h2 id="从参数空间到函数空间"><a href="#从参数空间到函数空间" class="headerlink" title="从参数空间到函数空间"></a>从参数空间到函数空间</h2><ul>
 <li>GBDT 在函数空间中利用梯度下降法进行优化</li>
 <li>XGBoost 在函数空间中利用牛顿法进优化</li>
 </ul>
-<h3 id="从gradient-decend-到gradient-boosting">从Gradient Decend 到Gradient Boosting</h3>
-<h4 id="参数空间">参数空间</h4>
-<p><span class="math display">\[\theta^t(第t次迭代后的参数)=\theta^{t-1}(第t-1次迭代后的参数)+\theta_t(第t次迭代的参数增量)\]</span></p>
-<ul>
-<li>参数更新方向后负梯度方向 <span class="math display">\[\theta_t=-a_{t}g_{t}\]</span></li>
-<li>最终参数等于每次迭代的增量的累加和 <span class="math display">\[\theta = \sum_{t=0}^{T}\theta^t\]</span></li>
-<li><span class="math inline">\(\theta_0为初值\)</span></li>
+<h3 id="从Gradient-Decend-到Gradient-Boosting"><a href="#从Gradient-Decend-到Gradient-Boosting" class="headerlink" title="从Gradient Decend 到Gradient Boosting"></a>从Gradient Decend 到Gradient Boosting</h3><h4 id="参数空间"><a href="#参数空间" class="headerlink" title="参数空间"></a>参数空间</h4><script type="math/tex; mode=display">\theta^t(第t次迭代后的参数)=\theta^{t-1}(第t-1次迭代后的参数)+\theta_t(第t次迭代的参数增量)</script><ul>
+<li>参数更新方向后负梯度方向<script type="math/tex; mode=display">\theta_t=-a_{t}g_{t}</script></li>
+<li>最终参数等于每次迭代的增量的累加和<script type="math/tex; mode=display">\theta = \sum_{t=0}^{T}\theta^t</script></li>
+<li>$\theta_0为初值$</li>
 </ul>
-<h4 id="函数空间">函数空间</h4>
-<p><span class="math display">\[f^t(x) (第t次迭代后的函数)=f^{t-1}(x)(第t-1次迭代后的函数)+f_t(x)(第t次迭代的函数增量)\]</span> - 同样地，拟合负梯度 <span class="math display">\[f_t(x)=-a_tg_t(x)\]</span> - 最终函数等于每次迭代的增量的累加和 <span class="math display">\[F(x)=\sum_{t=0}^{T}f_t(x)\]</span> - <span class="math inline">\(f_0(x)为模型初始值，通常为常数\)</span></p>
-<h3 id="从newtons-method-到-newton-boosting">从Newton’s Method 到 Newton Boosting</h3>
-<h4 id="参数空间-1">参数空间</h4>
-<p><span class="math display">\[\theta^t(第t次迭代后的参数)=\theta^{t-1}(第t-1次迭代后的参数)+\theta_t(第t次迭代的参数增量)\]</span></p>
-<ul>
-<li>与梯度下降法唯一不同的就是参数增量 <span class="math display">\[\theta_t=-H_{t}^{-1}g_{t}\]</span></li>
-<li>最终参数等于每次迭代的增量的累加和 <span class="math display">\[\theta = \sum_{t=0}^{T}\theta^t\]</span></li>
-<li><span class="math inline">\(\theta_0为初值\)</span></li>
+<h4 id="函数空间"><a href="#函数空间" class="headerlink" title="函数空间"></a>函数空间</h4><script type="math/tex; mode=display">f^t(x) (第t次迭代后的函数)=f^{t-1}(x)(第t-1次迭代后的函数)+f_t(x)(第t次迭代的函数增量)</script><ul>
+<li>同样地，拟合负梯度<script type="math/tex; mode=display">f_t(x)=-a_tg_t(x)</script></li>
+<li>最终函数等于每次迭代的增量的累加和<script type="math/tex; mode=display">F(x)=\sum_{t=0}^{T}f_t(x)</script></li>
+<li>$f_0(x)为模型初始值，通常为常数$</li>
 </ul>
-<h4 id="函数空间-1">函数空间</h4>
-<p><span class="math display">\[f^t(x) (第t次迭代后的函数)=f^{t-1}(x)(第t-1次迭代后的函数)+f_t(x)(第t次迭代的函数增量)\]</span> - 同样地，拟合负梯度 <span class="math display">\[f_t(x)=- \frac {g_t(x)}{h_t(x)}\]</span> - 最终函数等于每次迭代的增量的累加和 <span class="math display">\[F(x)=\sum_{t=0}^{T}f_t(x)\]</span> - <span class="math inline">\(f_0(x)为模型初始值，通常为常数\)</span></p>
-<h2 id="小结">小结</h2>
-<ul>
-<li>Boosting 算法是一种加法模型（additive training） <span class="math display">\[F(x)=\sum_{t=0}^{T}f_t(x)\]</span></li>
+<h3 id="从Newton’s-Method-到-Newton-Boosting"><a href="#从Newton’s-Method-到-Newton-Boosting" class="headerlink" title="从Newton’s Method 到 Newton Boosting"></a>从Newton’s Method 到 Newton Boosting</h3><h4 id="参数空间-1"><a href="#参数空间-1" class="headerlink" title="参数空间"></a>参数空间</h4><script type="math/tex; mode=display">\theta^t(第t次迭代后的参数)=\theta^{t-1}(第t-1次迭代后的参数)+\theta_t(第t次迭代的参数增量)</script><ul>
+<li>与梯度下降法唯一不同的就是参数增量<script type="math/tex; mode=display">\theta_t=-H_{t}^{-1}g_{t}</script></li>
+<li>最终参数等于每次迭代的增量的累加和<script type="math/tex; mode=display">\theta = \sum_{t=0}^{T}\theta^t</script></li>
+<li>$\theta_0为初值$</li>
 </ul>
-<h2 id="gradient-boosting-tree-算法原理">Gradient Boosting Tree 算法原理</h2>
-<ul>
-<li>其模型F 定义为加法模型： <span class="math display">\[F(X;w)=\sum_{t=0}^{T}\alpha_th_t(x;w_t)=\sum_{t=0}^{T}f_t(x;w_t)\]</span> 其中，x为输入样本，h为分类回归树，w是分类回归树的参数，<span class="math inline">\(\alpha\)</span>是每课树的权重。</li>
-<li>通过最小化损失函数求解最优模型： <span class="math display">\[F^*=\arg \min_{F}\sum_{i=0}^{N}L(y_i,F(x_i;w))\]</span> NP 难问题 —&gt; 通过贪心算法，迭代求解局部最优化</li>
+<h4 id="函数空间-1"><a href="#函数空间-1" class="headerlink" title="函数空间"></a>函数空间</h4><script type="math/tex; mode=display">f^t(x) (第t次迭代后的函数)=f^{t-1}(x)(第t-1次迭代后的函数)+f_t(x)(第t次迭代的函数增量)</script><ul>
+<li>同样地，拟合负梯度<script type="math/tex; mode=display">f_t(x)=- \frac {g_t(x)}{h_t(x)}</script></li>
+<li>最终函数等于每次迭代的增量的累加和<script type="math/tex; mode=display">F(x)=\sum_{t=0}^{T}f_t(x)</script></li>
+<li>$f_0(x)为模型初始值，通常为常数$</li>
 </ul>
-<p>输入：<span class="math inline">\((x_i,y_i),T,L\)</span> 1. 初始化 <span class="math inline">\(f_0\)</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li>for t=1 to T do 2.1. 计算相应: <span class="math display">\[y_i=-\left [ \frac{\partial L(y_i,F(x_i)) }{\partial F(x_i) } \right ]_{F(x)=F_{t-1}(x)},i=1,2,...N\]</span> 2.2. 学习第t棵树: <span class="math display">\[w^* = \arg\min_{t}\sum_{i=1}^{N}(y_i-h_t(x_i;w))^2\]</span> 2.3. line search 找步长:<span class="math display">\[\rho^* = \arg\min_{\rho}\sum_{i=1}^{N}L(y_i,F_{t-1}(x_i)+\rho h_{t}(x_i;w^*))\]</span> 2.4. 令<span class="math display">\[f_t=\rho^*h_t(x;w^*)\]</span>更新模型：<span class="math inline">\(F_t= F_{t-1}+f_t\)</span></li>
-<li>输出<span class="math inline">\(F_T\)</span></li>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>Boosting 算法是一种加法模型（additive training）<script type="math/tex; mode=display">F(x)=\sum_{t=0}^{T}f_t(x)</script></li>
+</ul>
+<h2 id="Gradient-Boosting-Tree-算法原理"><a href="#Gradient-Boosting-Tree-算法原理" class="headerlink" title="Gradient Boosting Tree 算法原理"></a>Gradient Boosting Tree 算法原理</h2><ul>
+<li>其模型F 定义为加法模型：<script type="math/tex; mode=display">F(X;w)=\sum_{t=0}^{T}\alpha_th_t(x;w_t)=\sum_{t=0}^{T}f_t(x;w_t)</script>其中，x为输入样本，h为分类回归树，w是分类回归树的参数，$\alpha$是每课树的权重。</li>
+<li>通过最小化损失函数求解最优模型：<script type="math/tex; mode=display">F^*=\arg \min_{F}\sum_{i=0}^{N}L(y_i,F(x_i;w))</script>NP 难问题 —&gt; 通过贪心算法，迭代求解局部最优化</li>
+</ul>
+<p>输入：$(x_i,y_i),T,L$</p>
+<ol>
+<li><p>初始化 $f_0$</p>
+</li>
+<li><p>for t=1 to T do<br> 2.1.  计算相应: <script type="math/tex">y_i=-\left [ \frac{\partial L(y_i,F(x_i)) }{\partial F(x_i) } \right ]_{F(x)=F_{t-1}(x)},i=1,2,...N</script><br> 2.2.  学习第t棵树: <script type="math/tex">w^* = \arg\min_{t}\sum_{i=1}^{N}(y_i-h_t(x_i;w))^2</script><br> 2.3. line search 找步长:<script type="math/tex">\rho^* = \arg\min_{\rho}\sum_{i=1}^{N}L(y_i,F_{t-1}(x_i)+\rho h_{t}(x_i;w^*))</script><br> 2.4. 令<script type="math/tex">f_t=\rho^*h_t(x;w^*)</script>更新模型：$F<em>t= F</em>{t-1}+f_t$</p>
+</li>
+<li>输出$F_T$ </li>
 </ol>
-<h2 id="gbdt-例子">GBDT 例子</h2>
-<p>本文将从一个简单的示例开始。我们希望根据一个人是否玩视频游戏、是否喜欢园艺以及戴帽子时的特点来判断这个人的年龄。我们总共有九个训练样本来构建模型。 <img src="http://img.blog.csdn.net/20170828140333057" alt="enter image description here"></p>
+<h2 id="GBDT-例子"><a href="#GBDT-例子" class="headerlink" title="GBDT 例子"></a>GBDT 例子</h2><p>本文将从一个简单的示例开始。我们希望根据一个人是否玩视频游戏、是否喜欢园艺以及戴帽子时的特点来判断这个人的年龄。我们总共有九个训练样本来构建模型。<br><img src="http://img.blog.csdn.net/20170828140333057" alt="enter image description here"></p>
 <ul>
-<li>梯度下降 接下来，让我们使用梯度下降的概念把这个想法形式化。假设我们有一个希望最小化的可微函数。例如 <span class="math display">\[L(x_1,x_2)=\frac{1}{2}(x_1-15)^2+\frac{1}{2}(x_2-25)^2\]</span> 我们的目标是找到一组能够最小化L的(x1, x2)。注意，这个函数可以理解为给定两个预测值x1和x2，计算其与两个数据点15和25的均方误差（使用1/2乘子更有利于梯度的计算）。尽管我们可以直接最小化这个函数，但是在面对更复杂的损失函数时，我们往往无法直接最小化损失函数，而梯度下降则为我们提供了一种可行的方式。</li>
+<li>梯度下降<br>接下来，让我们使用梯度下降的概念把这个想法形式化。假设我们有一个希望最小化的可微函数。例如<script type="math/tex; mode=display">L(x_1,x_2)=\frac{1}{2}(x_1-15)^2+\frac{1}{2}(x_2-25)^2</script>我们的目标是找到一组能够最小化L的(x1, x2)。注意，这个函数可以理解为给定两个预测值x1和x2，计算其与两个数据点15和25的均方误差（使用1/2乘子更有利于梯度的计算）。尽管我们可以直接最小化这个函数，但是在面对更复杂的损失函数时，我们往往无法直接最小化损失函数，而梯度下降则为我们提供了一种可行的方式。</li>
 </ul>
-<p>初始阶段： - 迭代次数M=100 - 迭代起始点s0=(0,0) - 迭代步长γ=0.1 在第m次迭代过程中（m取值从1到M）： - 计算函数L在数据点<span class="math inline">\(s^{(m-1)}\)</span>处的梯度 - 沿梯度最大方向（梯度的反方向）前进步长γ的距离。公式如下： <span class="math display">\[s^m=s^{(m-1)}-\gamma\Delta L(s^{(m-1)})\]</span> 如果<span class="math inline">\(\gamma\)</span>很小且<span class="math inline">\(M\)</span>足够大，那么<span class="math inline">\(s^{M}\)</span>将落在函数<span class="math inline">\(L\)</span>的最小值处</p>
+<p>初始阶段：</p>
 <ul>
-<li><p>应用梯度下降 现在，我们可以在前面的梯度提升模型中使用梯度下降了。我们需要最小化的目标函数是L。我们的起始点是F0(x)。在模型第一次迭代m=1时，我们计算L关于F0(x)的梯度。然后，我们将一个弱分类器调整为梯度分量。在回归树的例子中，叶子节点会在具有相似特征的样本间计算梯度均值。对于每一个叶子节点，我们沿梯度均值的方向更新参数（使用线性搜索来确定步长的大小）。更新后的结果记为F1。随后，我们反复重复这个过程，直到得到FM。</p>
-<p>我们修改了前面提到的梯度提升算法，使其适用于任何可微损失函数。 现在，让我们忘记前面的想法，从另外一个角度重新考虑我们的梯度提升模型。</p>
-<p>使用常量来初始化模型： <span class="math display">\[F_0(X)=\arg\min_{\gamma}\sum_{i=1}^{n}L(y_i,\gamma)\]</span></p>
+<li>迭代次数M=100</li>
+<li>迭代起始点s0=(0,0)</li>
+<li>迭代步长γ=0.1<br>在第m次迭代过程中（m取值从1到M）：</li>
+<li>计算函数L在数据点$s^{(m-1)}$处的梯度</li>
+<li><p>沿梯度最大方向（梯度的反方向）前进步长γ的距离。公式如下：</p>
+<script type="math/tex; mode=display">s^m=s^{(m-1)}-\gamma\Delta L(s^{(m-1)})</script><p>如果$\gamma$很小且$M$足够大，那么$s^{M}$将落在函数$L$的最小值处</p>
+</li>
+<li><p>应用梯度下降<br>  现在，我们可以在前面的梯度提升模型中使用梯度下降了。我们需要最小化的目标函数是L。我们的起始点是F0(x)。在模型第一次迭代m=1时，我们计算L关于F0(x)的梯度。然后，我们将一个弱分类器调整为梯度分量。在回归树的例子中，叶子节点会在具有相似特征的样本间计算梯度均值。对于每一个叶子节点，我们沿梯度均值的方向更新参数（使用线性搜索来确定步长的大小）。更新后的结果记为F1。随后，我们反复重复这个过程，直到得到FM。</p>
+</li>
+</ul>
+<pre><code>我们修改了前面提到的梯度提升算法，使其适用于任何可微损失函数。 现在，让我们忘记前面的想法，从另外一个角度重新考虑我们的梯度提升模型。
+
+使用常量来初始化模型：
+    $$F_0(X)=\arg\min_{\gamma}\sum_{i=1}^{n}L(y_i,\gamma)$$
+
 m从1到M：
+- 计算伪残差
+- 根据伪残差拟合基本学习器$h_m(x)$
+-  计算步长乘子$\gamma_m$（在树形模型的情况下，需要为每一个叶子节点计算不同的$\gamma_m$）
+-  更新$F_m(x)=F_{m-1}(x)+\gamma_mh_m(x)$
+如果你想要检测自己对梯度提升的理解是否正确，我们目前的梯度提升方法应用于示例问题的均方误差和绝对误差结果如下：
+</code></pre><p><img src="http://img.blog.csdn.net/20170828144219734" alt="enter image description here"><br><img src="http://img.blog.csdn.net/20170828143512588" alt="enter image description here"><br><img src="http://img.blog.csdn.net/20170828144132040" alt="enter image description here"><br><img src="http://img.blog.csdn.net/20170828143531899" alt="enter image description here"></p>
+<h2 id="Newton-Boosting-Tree-算法原理：详解XGBoost"><a href="#Newton-Boosting-Tree-算法原理：详解XGBoost" class="headerlink" title="Newton Boosting Tree 算法原理：详解XGBoost"></a>Newton Boosting Tree 算法原理：详解XGBoost</h2><h3 id="模型函数形式"><a href="#模型函数形式" class="headerlink" title="模型函数形式"></a>模型函数形式</h3><p>给定数据集$D = {(x_i,y_i)}$，XGBoost进行additive training，学习K棵树，采用以下函数对样本进行预测：</p>
+<script type="math/tex; mode=display">\hat{y_i}= \phi(x_i)=\sum_{k=1}^{K}f_k(x_i), f_k\in F</script><p>这里$F$是假设空间，$f(x)$是回归树(CART):</p>
+<script type="math/tex; mode=display">F=\{f(x)=w_{q(x)}\}(q:\mathbb{R}^{m}\rightarrow T,w\in \mathbb{R}^T)</script><p>$q(x)$表示将样本x分到了某个叶子节点上，$w$是叶子节点的分数（leaf score）,所以$w_q(x)$表示回归树对样本的预测值</p>
 <ul>
-<li>计算伪残差</li>
-<li>根据伪残差拟合基本学习器<span class="math inline">\(h_m(x)\)</span></li>
-<li>计算步长乘子<span class="math inline">\(\gamma_m\)</span>（在树形模型的情况下，需要为每一个叶子节点计算不同的<span class="math inline">\(\gamma_m\)</span>）</li>
-<li>更新<span class="math inline">\(F_m(x)=F_{m-1}(x)+\gamma_mh_m(x)\)</span> 如果你想要检测自己对梯度提升的理解是否正确，我们目前的梯度提升方法应用于示例问题的均方误差和绝对误差结果如下： <img src="http://img.blog.csdn.net/20170828144219734" alt="enter image description here"> <img src="http://img.blog.csdn.net/20170828143512588" alt="enter image description here"> <img src="http://img.blog.csdn.net/20170828144132040" alt="enter image description here"> <img src="http://img.blog.csdn.net/20170828143531899" alt="enter image description here"></li>
-</ul></li>
+<li>例子：预测一个人是否喜欢电脑游戏<img src="http://img.blog.csdn.net/20170827154341480" alt="enter image description here"><br>回归树的预测输出是实数分数，可以用于回归，分类，排序等任务中。对于回归问题，可以直接作为目标值，对于分类问题，需要映射成概率，比如采用逻辑函数$\sigma(z)=\frac{1}{1+e^{-z}}$</li>
 </ul>
-<h2 id="newton-boosting-tree-算法原理详解xgboost">Newton Boosting Tree 算法原理：详解XGBoost</h2>
-<h3 id="模型函数形式">模型函数形式</h3>
-<p>给定数据集<span class="math inline">\(D = \{(x_i,y_i)\}\)</span>，XGBoost进行additive training，学习K棵树，采用以下函数对样本进行预测： <span class="math display">\[\hat{y_i}= \phi(x_i)=\sum_{k=1}^{K}f_k(x_i), f_k\in F\]</span> 这里<span class="math inline">\(F\)</span>是假设空间，<span class="math inline">\(f(x)\)</span>是回归树(CART): <span class="math display">\[F=\{f(x)=w_{q(x)}\}(q:\mathbb{R}^{m}\rightarrow T,w\in \mathbb{R}^T)\]</span> <span class="math inline">\(q(x)\)</span>表示将样本x分到了某个叶子节点上，<span class="math inline">\(w\)</span>是叶子节点的分数（leaf score）,所以<span class="math inline">\(w_q(x)\)</span>表示回归树对样本的预测值</p>
-<ul>
-<li>例子：预测一个人是否喜欢电脑游戏<img src="http://img.blog.csdn.net/20170827154341480" alt="enter image description here"> 回归树的预测输出是实数分数，可以用于回归，分类，排序等任务中。对于回归问题，可以直接作为目标值，对于分类问题，需要映射成概率，比如采用逻辑函数<span class="math inline">\(\sigma(z)=\frac{1}{1+e^{-z}}\)</span></li>
+<h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><ul>
+<li>参数空间中的目标函数：<script type="math/tex; mode=display">Obj(\Theta) = L(\Theta)(误差函数)+\Omega(\Theta)(正则化项)</script>误差函数可以是square loss,logloss等，正则项可以是L1正则，L2正则等。<br>Ridge Regression(岭回归):<script type="math/tex">\sum_{i=1}^{n}(y_i-\theta^Tx_i)^2+\lambda\left \|\theta  \right \|^2</script><br>LASSO :<script type="math/tex">\sum_{i=1}^{n}(y_i-\theta^Tx_i)^2+\lambda\left \|\theta  \right \|_1</script></li>
 </ul>
-<h3 id="目标函数">目标函数</h3>
-<ul>
-<li>参数空间中的目标函数： <span class="math display">\[Obj(\Theta) = L(\Theta)(误差函数)+\Omega(\Theta)(正则化项)\]</span> 误差函数可以是square loss,logloss等，正则项可以是L1正则，L2正则等。 Ridge Regression(岭回归):<span class="math display">\[\sum_{i=1}^{n}(y_i-\theta^Tx_i)^2+\lambda\left \|\theta  \right \|^2\]</span> LASSO :<span class="math display">\[\sum_{i=1}^{n}(y_i-\theta^Tx_i)^2+\lambda\left \|\theta  \right \|_1\]</span></li>
-</ul>
-<h3 id="正则项">正则项</h3>
-<ul>
-<li>正则项的的作用，可以从几个角度去解释：
-<ul>
+<h3 id="正则项"><a href="#正则项" class="headerlink" title="正则项"></a>正则项</h3><ul>
+<li>正则项的的作用，可以从几个角度去解释：<ul>
 <li>通过偏方差分解去解释</li>
 <li>PAC-learning 泛化界解释</li>
 <li>Bayes 先验解释，把正则当成先验</li>
-</ul></li>
-<li>从Bayes 角度来看，正则相当于对模型参数引入先验分布： <img src="http://img.blog.csdn.net/20170827161455526" alt="enter image description here"> L2正则，模型参数服从高数分布<span class="math inline">\(\theta\sim N(0,\sigma ^2)\)</span>对参数加了分布约束，大部分绝对值很小 <img src="http://img.blog.csdn.net/20170827161501733" alt="enter image description here"> L1 正则，模型参数服从拉普拉斯分布对参数界了分布约束，大部分取值为0</li>
-<li>XGBoost 的目标函数(函数空间) <span class="math display">\[L(\phi) = \sum_{i}l(\hat(y_i),y_i)+\sum_{k}\Omega(f_k)\]</span> 正则项对每棵回归树的复杂度进行了惩罚</li>
+</ul>
+</li>
+<li>从Bayes 角度来看，正则相当于对模型参数引入先验分布：<br><img src="http://img.blog.csdn.net/20170827161455526" alt="enter image description here"><br>L2正则，模型参数服从高数分布$\theta\sim N(0,\sigma ^2)$对参数加了分布约束，大部分绝对值很小<br><img src="http://img.blog.csdn.net/20170827161501733" alt="enter image description here"><br>L1 正则，模型参数服从拉普拉斯分布对参数界了分布约束，大部分取值为0</li>
+<li>XGBoost 的目标函数(函数空间)<script type="math/tex; mode=display">L(\phi) = \sum_{i}l(\hat(y_i),y_i)+\sum_{k}\Omega(f_k)</script>正则项对每棵回归树的复杂度进行了惩罚</li>
 <li>相比原始的GBDT,XGBoost 的目标函数多了正则项，使得学习出来的模型更加不容易过拟合</li>
-<li>又哪些指标可以衡量树的复杂度？ 树的深度，内部节点的个数，叶子节点的个数（T）,叶节点分数（w）。。。 XGBoost 采用的： <span class="math display">\[\Omega(f)=\gamma T+\frac{1}{2}\lambda \left \| \omega  \right \|^2\]</span> 对叶子节点个数进行惩罚，相当于再训练过程中做了剪枝</li>
+<li>又哪些指标可以衡量树的复杂度？<br>树的深度，内部节点的个数，叶子节点的个数（T）,叶节点分数（w）。。。<br>XGBoost 采用的：<pre><code>              $$\Omega(f)=\gamma T+\frac{1}{2}\lambda \left \| \omega  \right \|^2$$
+</code></pre>对叶子节点个数进行惩罚，相当于再训练过程中做了剪枝</li>
 </ul>
-<h2 id="误差函数的二阶泰勒展开">误差函数的二阶泰勒展开</h2>
-<ul>
-<li>第t次迭代后，模型的预测等于前t-1次的模型预测加上第t棵树的预测： <span class="math display">\[\hat{y_i}^{(t)}=\hat{y_i}^{(t-1)}+f_t(x_i)\]</span></li>
-<li><p>此时目标函数可写作： <span class="math display">\[L^{(t)}=\sum_{i=1}^{n}l(y_i,\hat{y_i}^{(t-1)}+f_t(x_i))+\Omega(f_t)\]</span> 公式中 <span class="math inline">\(y_i\)</span>,<span class="math inline">\(\tilde{y_i}^{(t-1)}\)</span>都已知，模型要学习的只有第t棵树<span class="math inline">\(f_t\)</span></p></li>
-<li>将误差函数再<span class="math inline">\(\tilde{y_i}^{(t-1)}\)</span>处进行二次泰勒展开： <span class="math display">\[L^{(t)}\simeq \sum_{i=1}^{n}[l(y_i,\hat{y}^{(t-1)})+g_if_t(x_i)+\frac{1}{2}h_if_t^2(x_i)]+\Omega(f_t)\]</span> 公式中: <span class="math inline">\(g_i=\partial_{\hat{y}^{(t-1)}}l(y_i,\hat{y}^{(t-1)})\)</span><br>
-<span class="math inline">\(h_i=\partial_{\hat{y}^{(t-1)}}^{2}l(y_i,\hat{y}^{(t-1)})\)</span></li>
-<li>将公式中的常数项去掉，得到: <span class="math display">\[\tilde{L}^{(t)}=\sum_{i=1}^{n}[g_if_t(x_i)+\frac{1}{2}h_if_t^2(x_i)]+\Omega(f_t)\]</span></li>
-<li>把<span class="math inline">\(f_t,\Omega(f_t)\)</span>写成树结构的形式，即把下式代入目标函数中 <span class="math inline">\(f(x)=\omega _{q(x)}\)</span> <span class="math inline">\(\Omega(f)=\gamma T+\frac{1}{2}\lambda\left \|\omega \right \|^2\)</span></li>
-<li>得到：
-<span class="math display">\[\begin{align*}
-L^{(t)}&amp;=\sum_{i=1}^{n}[g_if_i(x_i)+\frac{1}{2}h_if_t^2(x_i)]+\Omega(f_t)\\
-&amp;=\sum_{i=1}^{n}[g_iw_{q(x_i)}+\frac{1}{2}h_iw^2_q(x_i)](对样本累加)+\gamma T+\lambda \frac{1}{2}\sum_{j=1}^{T}w_j^2(对叶节点累加)
-\end{align*}\]</span></li>
-<li>怎么统一起来？ 定义每个叶节点j上的样本集合为 $I_j = {i q(x_i)=j } $ 则目标函数可以写成按叶节点累加的形式:
-<span class="math display">\[\begin{align*}
-L^{(t)}&amp;=\sum_{j=1}^{T}\bigg[(\sum_{i\in I_j}g_i)w_{i}+\frac{1}{2}(\sum_{i\in I_j}h_i+\lambda)w^2_j\bigg]+\gamma T\\
-&amp;=\sum_{j=1}^{T}\bigg[(G_jw_{i}+\frac{1}{2}(H_j+\lambda)w^2_j\bigg]+\gamma T
-\end{align*}\]</span></li>
-<li><p>如果确定了树的结构（即q(x)确定），为了使目标函数最小，可以令其导数为0，解得每个叶节点得最优预测分数为： <span class="math display">\[w^*_j=-\frac{G_j}{H_j+\lambda}\]</span> 代入目标函数，得到最小损失为： <span class="math display">\[L^*=-\frac{1}{2}\sum_{j=1}^{T}\frac{G^2_j}{H_j+\lambda}+\gamma T\]</span></p></li>
+<h2 id="误差函数的二阶泰勒展开"><a href="#误差函数的二阶泰勒展开" class="headerlink" title="误差函数的二阶泰勒展开"></a>误差函数的二阶泰勒展开</h2><ul>
+<li>第t次迭代后，模型的预测等于前t-1次的模型预测加上第t棵树的预测：<script type="math/tex; mode=display">\hat{y_i}^{(t)}=\hat{y_i}^{(t-1)}+f_t(x_i)</script></li>
+<li><p>此时目标函数可写作：</p>
+<script type="math/tex; mode=display">L^{(t)}=\sum_{i=1}^{n}l(y_i,\hat{y_i}^{(t-1)}+f_t(x_i))+\Omega(f_t)</script><p>公式中 $y_i$,$\tilde{y_i}^{(t-1)}$都已知，模型要学习的只有第t棵树$f_t$</p>
+</li>
+<li><p>将误差函数再$\tilde{y_i}^{(t-1)}$处进行二次泰勒展开：</p>
+<script type="math/tex; mode=display">L^{(t)}\simeq \sum_{i=1}^{n}[l(y_i,\hat{y}^{(t-1)})+g_if_t(x_i)+\frac{1}{2}h_if_t^2(x_i)]+\Omega(f_t)</script><p>公式中:<br>$g<em>i=\partial</em>{\hat{y}^{(t-1)}}l(y<em>i,\hat{y}^{(t-1)})$<br>$h_i=\partial</em>{\hat{y}^{(t-1)}}^{2}l(y_i,\hat{y}^{(t-1)})$</p>
+</li>
+<li>将公式中的常数项去掉，得到:<script type="math/tex; mode=display">\tilde{L}^{(t)}=\sum_{i=1}^{n}[g_if_t(x_i)+\frac{1}{2}h_if_t^2(x_i)]+\Omega(f_t)</script></li>
+<li>把$f<em>t,\Omega(f_t)$写成树结构的形式，即把下式代入目标函数中<br>$f(x)=\omega </em>{q(x)}$<br>$\Omega(f)=\gamma T+\frac{1}{2}\lambda\left |\omega  \right |^2$</li>
+<li><p>得到：<br>\begin{align<em>}<br>L^{(t)}&amp;=\sum<em>{i=1}^{n}[g_if_i(x_i)+\frac{1}{2}h_if_t^2(x_i)]+\Omega(f_t)\<br>&amp;=\sum</em>{i=1}^{n}<a href="对样本累加">g<em>iw</em>{q(x_i)}+\frac{1}{2}h_iw^2_q(x_i)</a>+\gamma T+\lambda \frac{1}{2}\sum_{j=1}^{T}w_j^2(对叶节点累加)<br>\end{align</em>}</p>
+</li>
+<li><p>怎么统一起来？<br>定义每个叶节点j上的样本集合为 $I<em>j = {i \mid q(x_i)=j } $<br>则目标函数可以写成按叶节点累加的形式:<br>\begin{align*}<br>L^{(t)}&amp;=\sum</em>{j=1}^{T}\bigg[(\sum<em>{i\in I_j}g_i)w</em>{i}+\frac{1}{2}(\sum<em>{i\in I_j}h_i+\lambda)w^2_j\bigg]+\gamma T\<br>&amp;=\sum</em>{j=1}^{T}\bigg[(G<em>jw</em>{i}+\frac{1}{2}(H_j+\lambda)w^2_j\bigg]+\gamma T<br>\end{align*}</p>
+</li>
+<li><p>如果确定了树的结构（即q(x)确定），为了使目标函数最小，可以令其导数为0，解得每个叶节点得最优预测分数为：</p>
+<script type="math/tex; mode=display">w^*_j=-\frac{G_j}{H_j+\lambda}</script><p>代入目标函数，得到最小损失为：</p>
+<script type="math/tex; mode=display">L^*=-\frac{1}{2}\sum_{j=1}^{T}\frac{G^2_j}{H_j+\lambda}+\gamma T</script></li>
 </ul>
-<h2 id="回归树得学习策略">回归树得学习策略</h2>
-<ul>
-<li>当回归树得结构确定时，我们前面已经推导出其最优得叶节点分数以及对应得最小损失值，问题是怎么确定树的结构？
+<h2 id="回归树得学习策略"><a href="#回归树得学习策略" class="headerlink" title="回归树得学习策略"></a>回归树得学习策略</h2><ul>
+<li><p>当回归树得结构确定时，我们前面已经推导出其最优得叶节点分数以及对应得最小损失值，问题是怎么确定树的结构？</p>
 <ul>
 <li>暴力枚举所以可能的树结构，选择损失值最小的 -NP难问题。</li>
 <li>贪心法，每次尝试分裂一个叶节点，计算分裂前后的增益，选择增益最大的。</li>
-</ul></li>
-<li>分裂前后的增益怎么计算
+</ul>
+</li>
+<li><p>分裂前后的增益怎么计算</p>
 <ul>
 <li>ID3算法采用信息增益</li>
 <li>C4.5算法采用信息增益比</li>
-<li>CART 采用Gini 系数 XGBoost 呢？</li>
-</ul></li>
+<li>CART 采用Gini 系数<br>XGBoost 呢？</li>
 </ul>
-<h2 id="xgboost-的打分函数">XGBoost 的打分函数</h2>
-<p><span class="math display">\[L^*=-\frac{1}{2}\sum_{j=1}^{T}\color{Red}{\frac{G_j^2}{H_j+\lambda}}+\gamma T\]</span> 标红部分衡量了每个叶子节点对总体损失的贡献，我们希望损失越小越好，则标红部分的值越大越好。 因此，对一个叶子节点进行分裂，分裂前后的增益定义为：</p>
-<p><span class="math display">\[Gain = \frac{G_L^2}{H_L+\lambda}+\frac{G_R^2}{H_R+\lambda}-\frac{(G_R+G_L)^2}{H_R+H_L+\lambda}-\gamma\]</span></p>
-<p>Gain 的值越大，分裂后L减少越多。所以当对一个叶节点分割时，计算所又候选对应的gain,选取gain最大的进行分割</p>
-<h2 id="树节点分裂方法split-finding">树节点分裂方法（Split Finding）</h2>
-<ul>
-<li>暴力枚举 遍历所有特征的所有可能的分割点，计算gain值，选取值最大的（feature，value）去分割 <img src="http://img.blog.csdn.net/20170827201934475" alt="enter image description here"></li>
-<li>近似方法 对于每个特征，只考察分位点，减少计算复杂度 <img src="http://img.blog.csdn.net/20170827202110201" alt="enter image description here"> 举例：三分位数 <img src="http://img.blog.csdn.net/20170827202230673" alt="enter image description here"></li>
-<li>实际上XGBoost 不是简单地按照样本个数进行分位，而是以二阶导数值作为权重，比如： <img src="http://img.blog.csdn.net/20170827202443398" alt="enter image description here"></li>
-<li>为什么用<span class="math inline">\(h_i\)</span>加权？ 把目标函数整理成以下形式，可以看出<span class="math inline">\(h_i\)</span>又对loss加权作用 <span class="math display">\[\sum_{i=1}^{n}\frac{1}{2}h_i(f_t(x_i)-\frac{g_i}{h_i})^2+\Omega(f_t)+constant\]</span></li>
+</li>
 </ul>
-<h2 id="缺失值处理">缺失值处理</h2>
-<p>当特征出现却失值时，XGBoost可以学习处默认的节点分裂方向 <img src="http://img.blog.csdn.net/20170827203007228" alt="enter image description here"></p>
-<h2 id="xgboost的其他特性">XGBoost的其他特性</h2>
-<ul>
+<h2 id="XGBoost-的打分函数"><a href="#XGBoost-的打分函数" class="headerlink" title="XGBoost 的打分函数"></a>XGBoost 的打分函数</h2><script type="math/tex; mode=display">L^*=-\frac{1}{2}\sum_{j=1}^{T}\color{Red}{\frac{G_j^2}{H_j+\lambda}}+\gamma T</script><p> 标红部分衡量了每个叶子节点对总体损失的贡献，我们希望损失越小越好，则标红部分的值越大越好。<br> 因此，对一个叶子节点进行分裂，分裂前后的增益定义为：</p>
+<script type="math/tex; mode=display">Gain = \frac{G_L^2}{H_L+\lambda}+\frac{G_R^2}{H_R+\lambda}-\frac{(G_R+G_L)^2}{H_R+H_L+\lambda}-\gamma</script><p>Gain 的值越大，分裂后L减少越多。所以当对一个叶节点分割时，计算所又候选对应的gain,选取gain最大的进行分割</p>
+<h2 id="树节点分裂方法（Split-Finding）"><a href="#树节点分裂方法（Split-Finding）" class="headerlink" title="树节点分裂方法（Split Finding）"></a>树节点分裂方法（Split Finding）</h2><ul>
+<li>暴力枚举<br>遍历所有特征的所有可能的分割点，计算gain值，选取值最大的（feature，value）去分割<br><img src="http://img.blog.csdn.net/20170827201934475" alt="enter image description here"></li>
+<li>近似方法<br>对于每个特征，只考察分位点，减少计算复杂度<br><img src="http://img.blog.csdn.net/20170827202110201" alt="enter image description here"><br>举例：三分位数<br><img src="http://img.blog.csdn.net/20170827202230673" alt="enter image description here"></li>
+<li>实际上XGBoost 不是简单地按照样本个数进行分位，而是以二阶导数值作为权重，比如：<br><img src="http://img.blog.csdn.net/20170827202443398" alt="enter image description here"></li>
+<li>为什么用$h_i$加权？<br>把目标函数整理成以下形式，可以看出$h_i$又对loss加权作用<script type="math/tex; mode=display">\sum_{i=1}^{n}\frac{1}{2}h_i(f_t(x_i)-\frac{g_i}{h_i})^2+\Omega(f_t)+constant</script></li>
+</ul>
+<h2 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h2><p>当特征出现却失值时，XGBoost可以学习处默认的节点分裂方向<br><img src="http://img.blog.csdn.net/20170827203007228" alt="enter image description here"></p>
+<h2 id="XGBoost的其他特性"><a href="#XGBoost的其他特性" class="headerlink" title="XGBoost的其他特性"></a>XGBoost的其他特性</h2><ul>
 <li>行抽样（row sample）</li>
-<li>列抽样（column sample） 借鉴随机森林</li>
-<li><p>Shrinkage(缩减)，即学习速率 将学习速率调小，迭代次数增多，有正则化作用</p></li>
-<li><p>支持自定义损失函数（需二阶可导）</p></li>
+<li>列抽样（column sample）<br>借鉴随机森林</li>
+<li><p>Shrinkage(缩减)，即学习速率<br>将学习速率调小，迭代次数增多，有正则化作用</p>
+</li>
+<li><p>支持自定义损失函数（需二阶可导）</p>
+</li>
 </ul>
 
       
@@ -660,7 +660,7 @@ L^{(t)}&amp;=\sum_{j=1}^{T}\bigg[(\sum_{i\in I_j}g_i)w_{i}+\frac{1}{2}(\sum_{i\i
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -717,7 +717,7 @@ L^{(t)}&amp;=\sum_{j=1}^{T}\bigg[(\sum_{i\in I_j}g_i)w_{i}+\frac{1}{2}(\sum_{i\i
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gbdt-算法原理"><span class="nav-number">1.</span> <span class="nav-text">GBDT 算法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#泰勒公式介绍"><span class="nav-number">1.1.</span> <span class="nav-text">泰勒公式介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法介绍"><span class="nav-number">1.2.</span> <span class="nav-text">梯度下降法介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从参数空间到函数空间"><span class="nav-number">1.3.</span> <span class="nav-text">从参数空间到函数空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从gradient-decend-到gradient-boosting"><span class="nav-number">1.3.1.</span> <span class="nav-text">从Gradient Decend 到Gradient Boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数空间"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">参数空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数空间"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">函数空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从newtons-method-到-newton-boosting"><span class="nav-number">1.3.2.</span> <span class="nav-text">从Newton’s Method 到 Newton Boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数空间-1"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">参数空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数空间-1"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">函数空间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.4.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gradient-boosting-tree-算法原理"><span class="nav-number">1.5.</span> <span class="nav-text">Gradient Boosting Tree 算法原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gbdt-例子"><span class="nav-number">1.6.</span> <span class="nav-text">GBDT 例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#newton-boosting-tree-算法原理详解xgboost"><span class="nav-number">1.7.</span> <span class="nav-text">Newton Boosting Tree 算法原理：详解XGBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型函数形式"><span class="nav-number">1.7.1.</span> <span class="nav-text">模型函数形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标函数"><span class="nav-number">1.7.2.</span> <span class="nav-text">目标函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则项"><span class="nav-number">1.7.3.</span> <span class="nav-text">正则项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误差函数的二阶泰勒展开"><span class="nav-number">1.8.</span> <span class="nav-text">误差函数的二阶泰勒展开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回归树得学习策略"><span class="nav-number">1.9.</span> <span class="nav-text">回归树得学习策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost-的打分函数"><span class="nav-number">1.10.</span> <span class="nav-text">XGBoost 的打分函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树节点分裂方法split-finding"><span class="nav-number">1.11.</span> <span class="nav-text">树节点分裂方法（Split Finding）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺失值处理"><span class="nav-number">1.12.</span> <span class="nav-text">缺失值处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost的其他特性"><span class="nav-number">1.13.</span> <span class="nav-text">XGBoost的其他特性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GBDT-算法原理"><span class="nav-number">1.</span> <span class="nav-text">GBDT 算法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#泰勒公式介绍"><span class="nav-number">1.1.</span> <span class="nav-text">泰勒公式介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法介绍"><span class="nav-number">1.2.</span> <span class="nav-text">梯度下降法介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿法"><span class="nav-number">1.3.</span> <span class="nav-text">牛顿法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从参数空间到函数空间"><span class="nav-number">1.4.</span> <span class="nav-text">从参数空间到函数空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从Gradient-Decend-到Gradient-Boosting"><span class="nav-number">1.4.1.</span> <span class="nav-text">从Gradient Decend 到Gradient Boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数空间"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">参数空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数空间"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">函数空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从Newton’s-Method-到-Newton-Boosting"><span class="nav-number">1.4.2.</span> <span class="nav-text">从Newton’s Method 到 Newton Boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数空间-1"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">参数空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数空间-1"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">函数空间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Boosting-Tree-算法原理"><span class="nav-number">1.6.</span> <span class="nav-text">Gradient Boosting Tree 算法原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-例子"><span class="nav-number">1.7.</span> <span class="nav-text">GBDT 例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newton-Boosting-Tree-算法原理：详解XGBoost"><span class="nav-number">1.8.</span> <span class="nav-text">Newton Boosting Tree 算法原理：详解XGBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型函数形式"><span class="nav-number">1.8.1.</span> <span class="nav-text">模型函数形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标函数"><span class="nav-number">1.8.2.</span> <span class="nav-text">目标函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则项"><span class="nav-number">1.8.3.</span> <span class="nav-text">正则项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误差函数的二阶泰勒展开"><span class="nav-number">1.9.</span> <span class="nav-text">误差函数的二阶泰勒展开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回归树得学习策略"><span class="nav-number">1.10.</span> <span class="nav-text">回归树得学习策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGBoost-的打分函数"><span class="nav-number">1.11.</span> <span class="nav-text">XGBoost 的打分函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树节点分裂方法（Split-Finding）"><span class="nav-number">1.12.</span> <span class="nav-text">树节点分裂方法（Split Finding）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺失值处理"><span class="nav-number">1.13.</span> <span class="nav-text">缺失值处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGBoost的其他特性"><span class="nav-number">1.14.</span> <span class="nav-text">XGBoost的其他特性</span></a></li></ol></li></ol></div>
             
 
           </div>
