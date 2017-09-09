@@ -95,13 +95,13 @@
 
 
 
-<meta name="description" content="XGBOOST的参数1.  通用参数：宏观函数控制。 2.  Booster参数：控制每一步的booster(tree/regression)。 3.  学习目标参数：控制训练目标的表现。 通用参数 booster[默认gbtree] 选择每次迭代的模型，有两种选择： gbtree：基于树的模型 gbliner：线性模型   silent[默认0] 当这个参数值为1时，静默模式开启，不会输出任何信">
+<meta name="description" content="XGBOOST的参数 1.  通用参数：宏观函数控制。 2.  Booster参数：控制每一步的booster(tree/regression)。 3.  学习目标参数：控制训练目标的表现。 通用参数  booster[默认gbtree]  选择每次迭代的模型，有两种选择： gbtree：基于树的模型 gbliner：线性模型  silent[默认0]  当这个参数值为">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XGBOOST 调参">
 <meta property="og:url" content="http://yoursite.com/2017/09/01/XGBoostDemo/index.html">
 <meta property="og:site_name" content="庄B">
-<meta property="og:description" content="XGBOOST的参数1.  通用参数：宏观函数控制。 2.  Booster参数：控制每一步的booster(tree/regression)。 3.  学习目标参数：控制训练目标的表现。 通用参数 booster[默认gbtree] 选择每次迭代的模型，有两种选择： gbtree：基于树的模型 gbliner：线性模型   silent[默认0] 当这个参数值为1时，静默模式开启，不会输出任何信">
+<meta property="og:description" content="XGBOOST的参数 1.  通用参数：宏观函数控制。 2.  Booster参数：控制每一步的booster(tree/regression)。 3.  学习目标参数：控制训练目标的表现。 通用参数  booster[默认gbtree]  选择每次迭代的模型，有两种选择： gbtree：基于树的模型 gbliner：线性模型  silent[默认0]  当这个参数值为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/09/01/XGBoostDemo/output_9_1.png">
 <meta property="og:image" content="http://yoursite.com/2017/09/01/XGBoostDemo/output_16_2.png">
@@ -111,7 +111,7 @@
 <meta property="og:updated_time" content="2017-09-01T09:00:39.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XGBOOST 调参">
-<meta name="twitter:description" content="XGBOOST的参数1.  通用参数：宏观函数控制。 2.  Booster参数：控制每一步的booster(tree/regression)。 3.  学习目标参数：控制训练目标的表现。 通用参数 booster[默认gbtree] 选择每次迭代的模型，有两种选择： gbtree：基于树的模型 gbliner：线性模型   silent[默认0] 当这个参数值为1时，静默模式开启，不会输出任何信">
+<meta name="twitter:description" content="XGBOOST的参数 1.  通用参数：宏观函数控制。 2.  Booster参数：控制每一步的booster(tree/regression)。 3.  学习目标参数：控制训练目标的表现。 通用参数  booster[默认gbtree]  选择每次迭代的模型，有两种选择： gbtree：基于树的模型 gbliner：线性模型  silent[默认0]  当这个参数值为">
 <meta name="twitter:image" content="http://yoursite.com/2017/09/01/XGBoostDemo/output_9_1.png">
 
 
@@ -374,116 +374,117 @@
       
 
       
-        <h2 id="XGBOOST的参数"><a href="#XGBOOST的参数" class="headerlink" title="XGBOOST的参数"></a>XGBOOST的参数</h2><pre><code>1.  通用参数：宏观函数控制。
+        <h2 id="xgboost的参数">XGBOOST的参数</h2>
+<pre><code>1.  通用参数：宏观函数控制。
 2.  Booster参数：控制每一步的booster(tree/regression)。
-3.  学习目标参数：控制训练目标的表现。
-</code></pre><h3 id="通用参数"><a href="#通用参数" class="headerlink" title="通用参数"></a>通用参数</h3><ol>
-<li><h4 id="booster-默认gbtree"><a href="#booster-默认gbtree" class="headerlink" title="booster[默认gbtree]"></a>booster[默认gbtree]</h4><ul>
+3.  学习目标参数：控制训练目标的表现。</code></pre>
+<h3 id="通用参数">通用参数</h3>
+<ol style="list-style-type: decimal">
+<li><h4 id="booster默认gbtree">booster[默认gbtree]</h4>
+<ul>
 <li>选择每次迭代的模型，有两种选择：</li>
 <li>gbtree：基于树的模型</li>
 <li>gbliner：线性模型</li>
-</ul>
-</li>
-<li><h4 id="silent-默认0"><a href="#silent-默认0" class="headerlink" title="silent[默认0]"></a>silent[默认0]</h4><ul>
+</ul></li>
+<li><h4 id="silent默认0">silent[默认0]</h4>
+<ul>
 <li>当这个参数值为1时，静默模式开启，不会输出任何信息。 一般这个参数就保持默认的0，因为这样能帮我们更好地理解模型。</li>
-</ul>
-</li>
-<li><h4 id="nthread-默认值为最大可能的线程数"><a href="#nthread-默认值为最大可能的线程数" class="headerlink" title="nthread[默认值为最大可能的线程数]"></a>nthread[默认值为最大可能的线程数]</h4><ul>
+</ul></li>
+<li><h4 id="nthread默认值为最大可能的线程数">nthread[默认值为最大可能的线程数]</h4>
+<ul>
 <li>这个参数用来进行多线程控制，应当输入系统的核数。 如果你希望使用CPU全部的核，那就不要输入这个参数，算法会自动检测它。</li>
 <li>还有两个参数，XGBoost会自动设置，目前你不用管它。接下来咱们一起看booster参数。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
-<h3 id="booster参数"><a href="#booster参数" class="headerlink" title="booster参数"></a>booster参数</h3><h4 id="尽管有两种booster可供选择，我这里只介绍tree-booster，因为它的表现远远胜过linear-booster，所以linear-booster很少用到。"><a href="#尽管有两种booster可供选择，我这里只介绍tree-booster，因为它的表现远远胜过linear-booster，所以linear-booster很少用到。" class="headerlink" title="尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。"></a>尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</h4><ol>
-<li><h4 id="eta-默认0-3"><a href="#eta-默认0-3" class="headerlink" title="eta[默认0.3]"></a>eta[默认0.3]</h4><ul>
+<h3 id="booster参数">booster参数</h3>
+<h4 id="尽管有两种booster可供选择我这里只介绍tree-booster因为它的表现远远胜过linear-booster所以linear-booster很少用到">尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</h4>
+<ol style="list-style-type: decimal">
+<li><h4 id="eta默认0.3">eta[默认0.3]</h4>
+<ul>
 <li>和GBM中的 learning rate 参数类似。 通过减少每一步的权重，可以提高模型的鲁棒性。 典型值为0.01-0.2。</li>
-</ul>
-</li>
-<li><h4 id="min-child-weight-默认1"><a href="#min-child-weight-默认1" class="headerlink" title="min_child_weight[默认1]"></a>min_child_weight[默认1]</h4><ul>
+</ul></li>
+<li><h4 id="min_child_weight默认1">min_child_weight[默认1]</h4>
+<ul>
 <li>决定最小叶子节点样本权重和。 和GBM的 min_child_leaf 参数类似，但不完全一样。XGBoost的这个参数是最小样本权重的和，而GBM参数是最小样本总数。 这个参数用于避免过拟合。当它的值较大时，可以避免模型学习到局部的特殊样本。 但是如果这个值过高，会导致欠拟合。这个参数需要使用CV来调整。</li>
-</ul>
-</li>
-<li><h4 id="max-depth-默认6"><a href="#max-depth-默认6" class="headerlink" title="max_depth[默认6]"></a>max_depth[默认6]</h4><ul>
+</ul></li>
+<li><h4 id="max_depth默认6">max_depth[默认6]</h4>
+<ul>
 <li>和GBM中的参数相同，这个值为树的最大深度。 这个值也是用来避免过拟合的。max_depth越大，模型会学到更具体更局部的样本。 需要使用CV函数来进行调优。 典型值：3-10</li>
-</ul>
-</li>
-<li><h4 id="max-leaf-nodes"><a href="#max-leaf-nodes" class="headerlink" title="max_leaf_nodes"></a>max_leaf_nodes</h4><ul>
+</ul></li>
+<li><h4 id="max_leaf_nodes">max_leaf_nodes</h4>
+<ul>
 <li>树上最大的节点或叶子的数量。 可以替代max_depth的作用。因为如果生成的是二叉树，一个深度为n的树最多生成n2个叶子。 如果定义了这个参数，GBM会忽略max_depth参数。</li>
-</ul>
-</li>
-<li><h4 id="gamma-默认0"><a href="#gamma-默认0" class="headerlink" title="gamma[默认0]"></a>gamma[默认0]</h4><ul>
+</ul></li>
+<li><h4 id="gamma默认0">gamma[默认0]</h4>
+<ul>
 <li>在节点分裂时，只有分裂后损失函数的值下降了，才会分裂这个节点。Gamma指定了节点分裂所需的最小损失函数下降值。 这个参数的值越大，算法越保守。这个参数的值和损失函数息息相关，所以是需要调整的。</li>
-</ul>
-</li>
-<li><h4 id="max-delta-step-默认0"><a href="#max-delta-step-默认0" class="headerlink" title="max_delta_step[默认0]"></a>max_delta_step[默认0]</h4><ul>
+</ul></li>
+<li><h4 id="max_delta_step默认0">max_delta_step[默认0]</h4>
+<ul>
 <li>这参数限制每棵树权重改变的最大步长。如果这个参数的值为0，那就意味着没有约束。如果它被赋予了某个正值，那么它会让这个算法更加保守。 通常，这个参数不需要设置。但是当各类别的样本十分不平衡时，它对逻辑回归是很有帮助的。 这个参数一般用不到，但是你可以挖掘出来它更多的用处。</li>
-</ul>
-</li>
-<li><h4 id="subsample-默认1"><a href="#subsample-默认1" class="headerlink" title="subsample[默认1]"></a>subsample[默认1]</h4><ul>
+</ul></li>
+<li><h4 id="subsample默认1">subsample[默认1]</h4>
+<ul>
 <li>和GBM中的subsample参数一模一样。这个参数控制对于每棵树，随机采样的比例。 减小这个参数的值，算法会更加保守，避免过拟合。但是，如果这个值设置得过小，它可能会导致欠拟合。 典型值：0.5-1</li>
-</ul>
-</li>
-<li><h4 id="colsample-bytree-默认1"><a href="#colsample-bytree-默认1" class="headerlink" title="colsample_bytree[默认1]"></a>colsample_bytree[默认1]</h4><ul>
+</ul></li>
+<li><h4 id="colsample_bytree默认1">colsample_bytree[默认1]</h4>
+<ul>
 <li>和GBM里面的max_features参数类似。用来控制每棵随机采样的列数的占比(每一列是一个特征)。 典型值：0.5-1</li>
-</ul>
-</li>
-<li><h4 id="colsample-bylevel-默认1"><a href="#colsample-bylevel-默认1" class="headerlink" title="colsample_bylevel[默认1]"></a>colsample_bylevel[默认1]</h4><ul>
+</ul></li>
+<li><h4 id="colsample_bylevel默认1">colsample_bylevel[默认1]</h4>
+<ul>
 <li>用来控制树的每一级的每一次分裂，对列数的采样的占比。 我个人一般不太用这个参数，因为subsample参数和colsample_bytree参数可以起到相同的作用。但是如果感兴趣，可以挖掘这个参数更多的用处。</li>
-</ul>
-</li>
-<li><h4 id="lambda-默认1"><a href="#lambda-默认1" class="headerlink" title="lambda[默认1]"></a>lambda[默认1]</h4><ul>
+</ul></li>
+<li><h4 id="lambda默认1">lambda[默认1]</h4>
+<ul>
 <li>权重的L2正则化项。(和Ridge regression类似)。 这个参数是用来控制XGBoost的正则化部分的。虽然大部分数据科学家很少用到这个参数，但是这个参数在减少过拟合上还是可以挖掘出更多用处的。</li>
-</ul>
-</li>
-<li><h4 id="alpha-默认1"><a href="#alpha-默认1" class="headerlink" title="alpha[默认1]"></a>alpha[默认1]</h4><ul>
+</ul></li>
+<li><h4 id="alpha默认1">alpha[默认1]</h4>
+<ul>
 <li>权重的L1正则化项。(和Lasso regression类似)。 可以应用在很高维度的情况下，使得算法的速度更快。</li>
-</ul>
-</li>
-<li><h4 id="cale-pos-weight-默认1"><a href="#cale-pos-weight-默认1" class="headerlink" title="cale_pos_weight[默认1]"></a>cale_pos_weight[默认1]</h4><ul>
+</ul></li>
+<li><h4 id="cale_pos_weight默认1">cale_pos_weight[默认1]</h4>
+<ul>
 <li>在各类别样本十分不平衡时，把这个参数设定为一个正值，可以使算法更快收敛。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
-<h2 id="学习目标参数"><a href="#学习目标参数" class="headerlink" title="学习目标参数"></a>学习目标参数</h2><h3 id="这个参数用来控制理想的优化目标和每一步结果的度量方法。"><a href="#这个参数用来控制理想的优化目标和每一步结果的度量方法。" class="headerlink" title="这个参数用来控制理想的优化目标和每一步结果的度量方法。"></a>这个参数用来控制理想的优化目标和每一步结果的度量方法。</h3><ol>
-<li><h4 id="objective-默认reg-linear"><a href="#objective-默认reg-linear" class="headerlink" title="objective[默认reg:linear]"></a>objective[默认reg:linear]</h4><ul>
-<li>这个参数定义需要被最小化的损失函数。最常用的值有：<ul>
-<li>binary:logistic 二分类的逻辑回归，返回预测的概率(不是类别)。 </li>
-<li>multi:softmax 使用softmax的多分类器，返回预测的类别(不是概率)。<ul>
+<h2 id="学习目标参数">学习目标参数</h2>
+<h3 id="这个参数用来控制理想的优化目标和每一步结果的度量方法">这个参数用来控制理想的优化目标和每一步结果的度量方法。</h3>
+<ol style="list-style-type: decimal">
+<li><h4 id="objective默认reglinear">objective[默认reg:linear]</h4>
+<ul>
+<li>这个参数定义需要被最小化的损失函数。最常用的值有：
+<ul>
+<li>binary:logistic 二分类的逻辑回归，返回预测的概率(不是类别)。</li>
+<li>multi:softmax 使用softmax的多分类器，返回预测的类别(不是概率)。
+<ul>
 <li>在这种情况下，你还需要多设一个参数：num_class(类别数目)。</li>
-</ul>
-</li>
+</ul></li>
 <li>multi:softprob 和multi:softmax参数一样，但是返回的是每个数据属于各个类别的概率。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h4 id="eval-metric-默认值取决于objective参数的取值"><a href="#eval-metric-默认值取决于objective参数的取值" class="headerlink" title="eval_metric[默认值取决于objective参数的取值]"></a>eval_metric[默认值取决于objective参数的取值]</h4><ul>
-<li>对于有效数据的度量方法。 </li>
-<li>对于回归问题，默认值是rmse，对于分类问题，默认值是error。 </li>
-<li>典型值有：<ul>
-<li>rmse 均方根误差$(\sqrt{\frac{\sum_{i=1}^{N}\epsilon^{2}}{N}})$</li>
-<li>mae 平均绝对误差$(\frac{\sum_{i=1}^{N}\left | \epsilon \right |}{N})$</li>
-<li>logloss 负对数似然函数值 </li>
+</ul></li>
+</ul></li>
+<li><h4 id="eval_metric默认值取决于objective参数的取值">eval_metric[默认值取决于objective参数的取值]</h4>
+<ul>
+<li>对于有效数据的度量方法。</li>
+<li>对于回归问题，默认值是rmse，对于分类问题，默认值是error。</li>
+<li>典型值有：
+<ul>
+<li>rmse 均方根误差<span class="math inline">\((\sqrt{\frac{\sum_{i=1}^{N}\epsilon^{2}}{N}})\)</span></li>
+<li>mae 平均绝对误差<span class="math inline">\((\frac{\sum_{i=1}^{N}\left | \epsilon \right |}{N})\)</span></li>
+<li>logloss 负对数似然函数值</li>
 <li>error 二分类错误率(阈值为0.5)</li>
-<li>merror 多分类错误率 </li>
+<li>merror 多分类错误率</li>
 <li>mlogloss 多分类</li>
-<li>logloss损失函数 </li>
+<li>logloss损失函数</li>
 <li>auc 曲线下面积</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h4 id="seed-默认0"><a href="#seed-默认0" class="headerlink" title="seed(默认0)"></a>seed(默认0)</h4><ul>
-<li>随机数的种子 设置它可以复现随机数据的结果，也可以用于调整参数<br><br><br></li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
+<li><h4 id="seed默认0">seed(默认0)</h4>
+<ul>
+<li>随机数的种子 设置它可以复现随机数据的结果，也可以用于调整参数 <br><br></li>
+</ul></li>
 </ol>
-<p>如果你之前用的是Scikit-learn,你可能不太熟悉这些参数。但是有个好消息，python的XGBoost模块有一个sklearn包，XGBClassifier。这个包中的参数是按sklearn风格命名的。会改变的函数名是：</p>
-<ol>
-<li><h4 id="eta-gt-learning-rate"><a href="#eta-gt-learning-rate" class="headerlink" title="eta -&gt;learning_rate"></a>eta -&gt;learning_rate</h4></li>
-<li><h4 id="lambda-gt-reg-lambda"><a href="#lambda-gt-reg-lambda" class="headerlink" title="lambda-&gt;reg_lambda"></a>lambda-&gt;reg_lambda</h4></li>
-<li><h4 id="alpha-gt-reg-alpha"><a href="#alpha-gt-reg-alpha" class="headerlink" title="alpha-&gt;reg_alpha"></a>alpha-&gt;reg_alpha</h4><br><br></li>
-</ol>
+<p>如果你之前用的是Scikit-learn,你可能不太熟悉这些参数。但是有个好消息，python的XGBoost模块有一个sklearn包，XGBClassifier。这个包中的参数是按sklearn风格命名的。会改变的函数名是： 1. #### eta -&gt;learning_rate 2. #### lambda-&gt;reg_lambda 3. #### alpha-&gt;reg_alpha <br><br></p>
 <p>你肯定在疑惑为啥咱们没有介绍和GBM中的’n_estimators’类似的参数。XGBClassifier中确实有一个类似的参数，但是，是在标准XGBoost实现中调用拟合函数时，把它作为’num_boosting_rounds’参数传入。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Import libraries:</span></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> xgboost <span class="keyword">as</span> xgb</div><div class="line"><span class="keyword">from</span> xgboost.sklearn <span class="keyword">import</span> XGBClassifier</div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> cross_validation, metrics   <span class="comment">#Additional scklearn functions</span></div><div class="line"><span class="keyword">from</span> sklearn.grid_search <span class="keyword">import</span> GridSearchCV   <span class="comment">#Perforing grid search</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</div><div class="line">%matplotlib inline</div><div class="line"><span class="keyword">from</span> matplotlib.pylab <span class="keyword">import</span> rcParams</div><div class="line">rcParams[<span class="string">'figure.figsize'</span>] = <span class="number">12</span>, <span class="number">4</span></div><div class="line"></div><div class="line">train = pd.read_csv(<span class="string">'train_modified_xgb.csv'</span>)</div><div class="line">target = <span class="string">'Disbursed'</span></div><div class="line">IDcol = <span class="string">'ID'</span></div></pre></td></tr></table></figure>
 <p>注意我import了两种XGBoost：</p>
@@ -494,37 +495,35 @@
 <p>在向下进行之前，我们先定义一个函数，它可以帮助我们建立XGBoost models 并进行交叉验证。好消息是你可以直接用下面的函数，以后再自己的models中也可以使用它。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">modelfit</span><span class="params">(alg, dtrain, predictors,useTrainCV=True, cv_folds=<span class="number">5</span>, early_stopping_rounds=<span class="number">50</span>)</span>:</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> useTrainCV:</div><div class="line">        xgb_param = alg.get_xgb_params()</div><div class="line">        xgtrain = xgb.DMatrix(dtrain[predictors].values, label=dtrain[target].values)</div><div class="line">        cvresult = xgb.cv(xgb_param, xgtrain, num_boost_round=alg.get_params()[<span class="string">'n_estimators'</span>],show_stdv=<span class="keyword">False</span>, nfold=cv_folds,metrics=<span class="string">'auc'</span>, early_stopping_rounds=early_stopping_rounds)</div><div class="line">        alg.set_params(n_estimators=cvresult.shape[<span class="number">0</span>])</div><div class="line">    </div><div class="line">    <span class="comment">#Fit the algorithm on the data</span></div><div class="line">    alg.fit(dtrain[predictors], dtrain[<span class="string">'Disbursed'</span>],eval_metric=<span class="string">'auc'</span>)</div><div class="line">        </div><div class="line">    <span class="comment">#Predict training set:</span></div><div class="line">    dtrain_predictions = alg.predict(dtrain[predictors])</div><div class="line">    dtrain_predprob = alg.predict_proba(dtrain[predictors])[:,<span class="number">1</span>]</div><div class="line">        </div><div class="line">    <span class="comment">#Print model report:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"\nModel Report"</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"Accuracy : %.4g"</span> % metrics.accuracy_score(dtrain[<span class="string">'Disbursed'</span>].values, dtrain_predictions)</div><div class="line">    <span class="keyword">print</span> <span class="string">"AUC Score (Train): %f"</span> % metrics.roc_auc_score(dtrain[<span class="string">'Disbursed'</span>], dtrain_predprob)</div><div class="line">                    </div><div class="line">    feat_imp = pd.Series(alg.booster().get_fscore()).sort_values(ascending=<span class="keyword">False</span>)</div><div class="line">    feat_imp.plot(kind=<span class="string">'bar'</span>, title=<span class="string">'Feature Importances'</span>)</div><div class="line">    plt.ylabel(<span class="string">'Feature Importance Score'</span>)</div></pre></td></tr></table></figure>
 <p>这个函数和GBM中使用的有些许不同。不过本文章的重点是讲解重要的概念，而不是写代码。如果哪里有不理解的地方，请在下面评论，不要有压力。注意xgboost的sklearn包没有“feature_importance”这个量度，但是get_fscore()函数有相同的功能。</p>
-<h3 id="参数调优的一般方法"><a href="#参数调优的一般方法" class="headerlink" title="参数调优的一般方法"></a>参数调优的一般方法</h3><p>我们会使用和GBM中相似的方法。需要进行如下步骤：</p>
-<ol>
-<li><p>选择较高的学习速率(learning rate)。一般情况下，学习速率的值为0.1。但是，对于不同的问题，理想的学习速率有时候会在0.05到0.3之间波动。选择对应于此学习速率的理想决策树数量。XGBoost有一个很有用的函数“cv”，这个函数可以在每一次迭代中使用交叉验证，并返回理想的决策树数量。</p>
-</li>
-<li><p>对于给定的学习速率和决策树数量，进行决策树特定参数调优(max_depth, min_child_weight, gamma, subsample, colsample_bytree)。在确定一棵树的过程中，我们可以选择不同的参数，待会儿我会举例说明。</p>
-</li>
-<li><p>xgboost的正则化参数的调优。(lambda, alpha)。这些参数可以降低模型的复杂度，从而提高模型的表现。</p>
-</li>
-<li><p>降低学习速率，确定理想参数。</p>
-</li>
+<h3 id="参数调优的一般方法">参数调优的一般方法</h3>
+<p>我们会使用和GBM中相似的方法。需要进行如下步骤：</p>
+<ol style="list-style-type: decimal">
+<li><p>选择较高的学习速率(learning rate)。一般情况下，学习速率的值为0.1。但是，对于不同的问题，理想的学习速率有时候会在0.05到0.3之间波动。选择对应于此学习速率的理想决策树数量。XGBoost有一个很有用的函数“cv”，这个函数可以在每一次迭代中使用交叉验证，并返回理想的决策树数量。</p></li>
+<li><p>对于给定的学习速率和决策树数量，进行决策树特定参数调优(max_depth, min_child_weight, gamma, subsample, colsample_bytree)。在确定一棵树的过程中，我们可以选择不同的参数，待会儿我会举例说明。</p></li>
+<li><p>xgboost的正则化参数的调优。(lambda, alpha)。这些参数可以降低模型的复杂度，从而提高模型的表现。</p></li>
+<li><p>降低学习速率，确定理想参数。</p></li>
 </ol>
 <p>咱们一起详细地一步步进行这些操作。</p>
-<h3 id="第一步：确定学习速率和tree-based-参数调优的估计器数目"><a href="#第一步：确定学习速率和tree-based-参数调优的估计器数目" class="headerlink" title="第一步：确定学习速率和tree_based 参数调优的估计器数目"></a>第一步：确定学习速率和tree_based 参数调优的估计器数目</h3><p>为了确定boosting参数，我们要先给其它参数一个初始值。咱们先按如下方法取值：</p>
-<ol>
-<li><p>max_depth = 5 :这个参数的取值最好在3-10之间。我选的起始值为5，但是你也可以选择其它的值。起始值在4-6之间都是不错的选择。</p>
-</li>
-<li><p>min_child_weight = 1:在这里选了一个比较小的值，因为这是一个极不平衡的分类问题。因此，某些叶子节点下的值会比较小。</p>
-</li>
-<li><p>gamma = 0: 起始值也可以选其它比较小的值，在0.1到0.2之间就可以。这个参数后继也是要调整的。</p>
-</li>
-<li><p>subsample, colsample_bytree = 0.8: 这个是最常见的初始值了。典型值的范围在0.5-0.9之间。</p>
-</li>
-<li><p>scale_pos_weight = 1: 这个值是因为类别十分不平衡。<br>注意哦，上面这些参数的值只是一个初始的估计值，后继需要调优。这里把学习速率就设成默认的0.1。然后用xgboost中的cv函数来确定最佳的决策树数量。前文中的函数可以完成这个工作。</p>
-</li>
+<h3 id="第一步确定学习速率和tree_based-参数调优的估计器数目">第一步：确定学习速率和tree_based 参数调优的估计器数目</h3>
+<p>为了确定boosting参数，我们要先给其它参数一个初始值。咱们先按如下方法取值：</p>
+<ol style="list-style-type: decimal">
+<li><p>max_depth = 5 :这个参数的取值最好在3-10之间。我选的起始值为5，但是你也可以选择其它的值。起始值在4-6之间都是不错的选择。</p></li>
+<li><p>min_child_weight = 1:在这里选了一个比较小的值，因为这是一个极不平衡的分类问题。因此，某些叶子节点下的值会比较小。</p></li>
+<li><p>gamma = 0: 起始值也可以选其它比较小的值，在0.1到0.2之间就可以。这个参数后继也是要调整的。</p></li>
+<li><p>subsample, colsample_bytree = 0.8: 这个是最常见的初始值了。典型值的范围在0.5-0.9之间。</p></li>
+<li><p>scale_pos_weight = 1: 这个值是因为类别十分不平衡。 注意哦，上面这些参数的值只是一个初始的估计值，后继需要调优。这里把学习速率就设成默认的0.1。然后用xgboost中的cv函数来确定最佳的决策树数量。前文中的函数可以完成这个工作。</p></li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Choose all predictors except target &amp; IDcols</span></div><div class="line">predictors = [x <span class="keyword">for</span> x <span class="keyword">in</span> train.columns <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> [target, IDcol]]</div><div class="line">xgb1 = XGBClassifier(</div><div class="line"> learning_rate =<span class="number">0.1</span>,</div><div class="line"> n_estimators=<span class="number">1000</span>,</div><div class="line"> max_depth=<span class="number">5</span>,</div><div class="line"> min_child_weight=<span class="number">1</span>,</div><div class="line"> gamma=<span class="number">0</span>,</div><div class="line"> subsample=<span class="number">0.8</span>,</div><div class="line"> colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>,</div><div class="line"> nthread=<span class="number">4</span>,</div><div class="line"> scale_pos_weight=<span class="number">1</span>,</div><div class="line"> seed=<span class="number">27</span>)</div><div class="line">modelfit(xgb1, train, predictors)</div></pre></td></tr></table></figure>
 <pre><code>Model Report
 Accuracy : 0.9854
-AUC Score (Train): 0.891681
-</code></pre><p><img src="/2017/09/01/XGBoostDemo/output_9_1.png" alt="png"></p>
-<h4 id="从输出结果可以看出，在学习速率为0-1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。"><a href="#从输出结果可以看出，在学习速率为0-1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。" class="headerlink" title="从输出结果可以看出，在学习速率为0.1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。"></a>从输出结果可以看出，在学习速率为0.1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。</h4><h4 id="第二步：-max-depth-和-min-weight-参数调优"><a href="#第二步：-max-depth-和-min-weight-参数调优" class="headerlink" title="第二步： max_depth 和 min_weight 参数调优"></a>第二步： max_depth 和 min_weight 参数调优</h4><p>我们先对这两个参数调优，是因为它们对最终结果有很大的影响。首先，我们先大范围地粗调参数，然后再小范围地微调。 </p>
+AUC Score (Train): 0.891681</code></pre>
+<div class="figure">
+<img src="/2017/09/01/XGBoostDemo/output_9_1.png" alt="png">
+<p class="caption">png</p>
+</div>
+<h4 id="从输出结果可以看出在学习速率为0.1时理想的决策树数目是140这个数字对你而言可能比较高当然这也取决于你的系统的性能">从输出结果可以看出，在学习速率为0.1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。</h4>
+<h4 id="第二步-max_depth-和-min_weight-参数调优">第二步： max_depth 和 min_weight 参数调优</h4>
+<p>我们先对这两个参数调优，是因为它们对最终结果有很大的影响。首先，我们先大范围地粗调参数，然后再小范围地微调。</p>
 <p>注意：在这一节我会进行高负荷的栅格搜索(grid search)，这个过程大约需要15-30分钟甚至更久，具体取决于你系统的性能。你也可以根据自己系统的性能选择不同的值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">param_test1 = &#123;</div><div class="line"> <span class="string">'max_depth'</span>:range(<span class="number">3</span>,<span class="number">10</span>,<span class="number">2</span>),</div><div class="line"> <span class="string">'min_child_weight'</span>:range(<span class="number">1</span>,<span class="number">6</span>,<span class="number">2</span>)</div><div class="line">&#125;</div><div class="line">gsearch1 = GridSearchCV(estimator = XGBClassifier(         learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">140</span>, max_depth=<span class="number">5</span>,</div><div class="line">min_child_weight=<span class="number">1</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>,             colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>,     scale_pos_weight=<span class="number">1</span>, seed=<span class="number">27</span>), </div><div class="line"> param_grid = param_test1,     scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line">gsearch1.fit(train[predictors],train[target])</div><div class="line">gsearch1.grid_scores_, gsearch1.best_params_,     gsearch1.best_score_</div></pre></td></tr></table></figure>
 <pre><code>([mean: 0.83764, std: 0.00875, params: {&#39;max_depth&#39;: 3, &#39;min_child_weight&#39;: 1},
@@ -540,8 +539,9 @@ AUC Score (Train): 0.891681
   mean: 0.82955, std: 0.00580, params: {&#39;max_depth&#39;: 9, &#39;min_child_weight&#39;: 3},
   mean: 0.83158, std: 0.00677, params: {&#39;max_depth&#39;: 9, &#39;min_child_weight&#39;: 5}],
  {&#39;max_depth&#39;: 5, &#39;min_child_weight&#39;: 1},
- 0.8401574515811714)
-</code></pre><h4 id="至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max-depth值为5，理想的min-child-weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。"><a href="#至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max-depth值为5，理想的min-child-weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。" class="headerlink" title="至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max_depth值为5，理想的min_child_weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。"></a>至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max_depth值为5，理想的min_child_weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">param_test2 = &#123;</div><div class="line"> <span class="string">'max_depth'</span>:[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],</div><div class="line"> <span class="string">'min_child_weight'</span>:[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line">&#125;</div><div class="line">gsearch2 = GridSearchCV(estimator = XGBClassifier(     learning_rate=<span class="number">0.1</span>, n_estimators=<span class="number">140</span>, max_depth=<span class="number">5</span>,</div><div class="line"> min_child_weight=<span class="number">2</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), </div><div class="line"> param_grid = param_test2, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line">gsearch2.fit(train[predictors],train[target])</div><div class="line">gsearch2.grid_scores_, gsearch2.best_params_,     gsearch2.best_score_</div></pre></td></tr></table></figure>
+ 0.8401574515811714)</code></pre>
+<h4 id="至此我们对于数值进行了较大跨度的12中不同的排列组合可以看出理想的max_depth值为5理想的min_child_weight值为5在这个值附近我们可以再进一步调整来找出理想值我们把上下范围各拓展1因为之前我们进行组合的时候参数调整的步长是2">至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max_depth值为5，理想的min_child_weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">param_test2 = &#123;</div><div class="line"> <span class="string">'max_depth'</span>:[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],</div><div class="line"> <span class="string">'min_child_weight'</span>:[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line">&#125;</div><div class="line">gsearch2 = GridSearchCV(estimator = XGBClassifier(     learning_rate=<span class="number">0.1</span>, n_estimators=<span class="number">140</span>, max_depth=<span class="number">5</span>,</div><div class="line"> min_child_weight=<span class="number">2</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), </div><div class="line"> param_grid = param_test2, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line">gsearch2.fit(train[predictors],train[target])</div><div class="line">gsearch2.grid_scores_, gsearch2.best_params_,     gsearch2.best_score_</div></pre></td></tr></table></figure>
 <pre><code>([mean: 0.84034, std: 0.00601, params: {&#39;max_depth&#39;: 4, &#39;min_child_weight&#39;: 4},
   mean: 0.83921, std: 0.00658, params: {&#39;max_depth&#39;: 4, &#39;min_child_weight&#39;: 5},
   mean: 0.84003, std: 0.00622, params: {&#39;max_depth&#39;: 4, &#39;min_child_weight&#39;: 6},
@@ -552,8 +552,9 @@ AUC Score (Train): 0.891681
   mean: 0.83717, std: 0.00483, params: {&#39;max_depth&#39;: 6, &#39;min_child_weight&#39;: 5},
   mean: 0.83732, std: 0.00601, params: {&#39;max_depth&#39;: 6, &#39;min_child_weight&#39;: 6}],
  {&#39;max_depth&#39;: 5, &#39;min_child_weight&#39;: 4},
- 0.8407073731353547)
-</code></pre><h4 id="至此，我们得到max-depth的理想取值为4，min-child-weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min-child-weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。"><a href="#至此，我们得到max-depth的理想取值为4，min-child-weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min-child-weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。" class="headerlink" title="至此，我们得到max_depth的理想取值为4，min_child_weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min_child_weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。"></a>至此，我们得到max_depth的理想取值为4，min_child_weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min_child_weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">param_test2b = &#123;</div><div class="line"> <span class="string">'min_child_weight'</span>:[<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">12</span>]</div><div class="line"> &#125;</div><div class="line">gsearch2b = GridSearchCV(estimator = XGBClassifier(     learning_rate=<span class="number">0.1</span>, n_estimators=<span class="number">140</span>, max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">2</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test2b, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch2b.fit(train[predictors],train[target])</div><div class="line"></div><div class="line">modelfit(gsearch2b.best_estimator_, train, predictors)</div><div class="line"></div><div class="line">gsearch2b.grid_scores_, gsearch2b.best_params_, gsearch2b.best_score_</div></pre></td></tr></table></figure>
+ 0.8407073731353547)</code></pre>
+<h4 id="至此我们得到max_depth的理想取值为4min_child_weight的理想取值为6同时我们还能看到cv的得分有了小小一点提高需要注意的一点是随着模型表现的提升进一步提升的难度是指数级上升的尤其是你的表现已经接近完美的时候当然啦你会发现虽然min_child_weight的理想取值是6但是我们还没尝试过大于6的取值像下面这样就可以尝试其它值">至此，我们得到max_depth的理想取值为4，min_child_weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min_child_weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">param_test2b = &#123;</div><div class="line"> <span class="string">'min_child_weight'</span>:[<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">12</span>]</div><div class="line"> &#125;</div><div class="line">gsearch2b = GridSearchCV(estimator = XGBClassifier(     learning_rate=<span class="number">0.1</span>, n_estimators=<span class="number">140</span>, max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">2</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test2b, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch2b.fit(train[predictors],train[target])</div><div class="line"></div><div class="line">modelfit(gsearch2b.best_estimator_, train, predictors)</div><div class="line"></div><div class="line">gsearch2b.grid_scores_, gsearch2b.best_params_, gsearch2b.best_score_</div></pre></td></tr></table></figure>
 <pre><code>Model Report
 Accuracy : 0.9854
 AUC Score (Train): 0.875086
@@ -567,22 +568,35 @@ AUC Score (Train): 0.875086
   mean: 0.84004, std: 0.00661, params: {&#39;min_child_weight&#39;: 10},
   mean: 0.83869, std: 0.00632, params: {&#39;min_child_weight&#39;: 12}],
  {&#39;min_child_weight&#39;: 10},
- 0.840037896893036)
-</code></pre><p><img src="/2017/09/01/XGBoostDemo/output_16_2.png" alt="png"></p>
-<h4 id="我们可以看出，6确确实实是理想的取值了。"><a href="#我们可以看出，6确确实实是理想的取值了。" class="headerlink" title="我们可以看出，6确确实实是理想的取值了。"></a>我们可以看出，6确确实实是理想的取值了。</h4><h3 id="第三步：gamma参数调优"><a href="#第三步：gamma参数调优" class="headerlink" title="第三步：gamma参数调优"></a>第三步：gamma参数调优</h3><h4 id="在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。"><a href="#在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。" class="headerlink" title="在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。"></a>在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">param_test3 = &#123;</div><div class="line"> <span class="string">'gamma'</span>:[i/<span class="number">10.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>)]</div><div class="line">&#125;</div><div class="line">gsearch3 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">140</span>, max_depth=<span class="number">4</span>, min_child_weight=<span class="number">6</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test3, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch3.fit(train[predictors],train[target])</div><div class="line">gsearch3.grid_scores_, gsearch3.best_params_, gsearch3.best_score_</div></pre></td></tr></table></figure>
+ 0.840037896893036)</code></pre>
+<div class="figure">
+<img src="/2017/09/01/XGBoostDemo/output_16_2.png" alt="png">
+<p class="caption">png</p>
+</div>
+<h4 id="我们可以看出6确确实实是理想的取值了">我们可以看出，6确确实实是理想的取值了。</h4>
+<h3 id="第三步gamma参数调优">第三步：gamma参数调优</h3>
+<h4 id="在已经调整好其它参数的基础上我们可以进行gamma参数的调优了gamma参数取值范围可以很大我这里把取值范围设置为5了你其实也可以取更精确的gamma值">在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">param_test3 = &#123;</div><div class="line"> <span class="string">'gamma'</span>:[i/<span class="number">10.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>)]</div><div class="line">&#125;</div><div class="line">gsearch3 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">140</span>, max_depth=<span class="number">4</span>, min_child_weight=<span class="number">6</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test3, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch3.fit(train[predictors],train[target])</div><div class="line">gsearch3.grid_scores_, gsearch3.best_params_, gsearch3.best_score_</div></pre></td></tr></table></figure>
 <pre><code>([mean: 0.84003, std: 0.00622, params: {&#39;gamma&#39;: 0.0},
   mean: 0.84017, std: 0.00594, params: {&#39;gamma&#39;: 0.1},
   mean: 0.83963, std: 0.00624, params: {&#39;gamma&#39;: 0.2},
   mean: 0.83974, std: 0.00692, params: {&#39;gamma&#39;: 0.3},
   mean: 0.83996, std: 0.00568, params: {&#39;gamma&#39;: 0.4}],
  {&#39;gamma&#39;: 0.1},
- 0.8401672862430356)
-</code></pre><h4 id="从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。"><a href="#从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。" class="headerlink" title="从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。"></a>从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。</h4><h4 id="从这里，可以看出，得分提高了。所以，最终得到的参数是："><a href="#从这里，可以看出，得分提高了。所以，最终得到的参数是：" class="headerlink" title="从这里，可以看出，得分提高了。所以，最终得到的参数是："></a>从这里，可以看出，得分提高了。所以，最终得到的参数是：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">xgb2 = XGBClassifier(</div><div class="line"> learning_rate =<span class="number">0.1</span>,</div><div class="line"> n_estimators=<span class="number">1000</span>,</div><div class="line"> max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>,</div><div class="line"> gamma=<span class="number">0</span>,</div><div class="line"> subsample=<span class="number">0.8</span>,</div><div class="line"> colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>,</div><div class="line"> nthread=<span class="number">4</span>,</div><div class="line">scale_pos_weight=<span class="number">1</span>,</div><div class="line">seed=<span class="number">27</span>)</div><div class="line">modelfit(xgb2, train, predictors)</div></pre></td></tr></table></figure>
+ 0.8401672862430356)</code></pre>
+<h4 id="从这里可以看出来我们在第一步调参时设置的初始gamma值就是比较合适的也就是说理想的gamma值为0在这个过程开始之前最好重新调整boosting回合因为参数都有变化">从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。</h4>
+<h4 id="从这里可以看出得分提高了所以最终得到的参数是">从这里，可以看出，得分提高了。所以，最终得到的参数是：</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">xgb2 = XGBClassifier(</div><div class="line"> learning_rate =<span class="number">0.1</span>,</div><div class="line"> n_estimators=<span class="number">1000</span>,</div><div class="line"> max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>,</div><div class="line"> gamma=<span class="number">0</span>,</div><div class="line"> subsample=<span class="number">0.8</span>,</div><div class="line"> colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>,</div><div class="line"> nthread=<span class="number">4</span>,</div><div class="line">scale_pos_weight=<span class="number">1</span>,</div><div class="line">seed=<span class="number">27</span>)</div><div class="line">modelfit(xgb2, train, predictors)</div></pre></td></tr></table></figure>
 <pre><code>Model Report
 Accuracy : 0.9854
-AUC Score (Train): 0.883777
-</code></pre><p><img src="/2017/09/01/XGBoostDemo/output_22_1.png" alt="png"></p>
-<h2 id="调整subsample-和-colsample-bytree-参数"><a href="#调整subsample-和-colsample-bytree-参数" class="headerlink" title="调整subsample 和 colsample_bytree 参数"></a>调整subsample 和 colsample_bytree 参数</h2><h4 id="下一步是尝试不同的subsample-和-colsample-bytree-参数。我们分两个阶段来进行这个步骤。这两个步骤都取0-6-0-7-0-8-0-9作为起始值。"><a href="#下一步是尝试不同的subsample-和-colsample-bytree-参数。我们分两个阶段来进行这个步骤。这两个步骤都取0-6-0-7-0-8-0-9作为起始值。" class="headerlink" title="下一步是尝试不同的subsample 和 colsample_bytree 参数。我们分两个阶段来进行这个步骤。这两个步骤都取0.6,0.7,0.8,0.9作为起始值。"></a>下一步是尝试不同的subsample 和 colsample_bytree 参数。我们分两个阶段来进行这个步骤。这两个步骤都取0.6,0.7,0.8,0.9作为起始值。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">param_test4 = &#123;</div><div class="line"> <span class="string">'subsample'</span>:[i/<span class="number">10.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>,<span class="number">10</span>)],</div><div class="line"> <span class="string">'colsample_bytree'</span>:[i/<span class="number">10.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>,<span class="number">10</span>)]</div><div class="line">&#125;</div><div class="line"></div><div class="line">gsearch4 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">177</span>, max_depth=<span class="number">3</span>, min_child_weight=<span class="number">4</span>, gamma=<span class="number">0.1</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test4, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch4.fit(train[predictors],train[target])</div><div class="line">gsearch4.grid_scores_, gsearch4.best_params_, gsearch4.best_score_</div></pre></td></tr></table></figure>
+AUC Score (Train): 0.883777</code></pre>
+<div class="figure">
+<img src="/2017/09/01/XGBoostDemo/output_22_1.png" alt="png">
+<p class="caption">png</p>
+</div>
+<h2 id="调整subsample-和-colsample_bytree-参数">调整subsample 和 colsample_bytree 参数</h2>
+<h4 id="下一步是尝试不同的subsample-和-colsample_bytree-参数我们分两个阶段来进行这个步骤这两个步骤都取0.60.70.80.9作为起始值">下一步是尝试不同的subsample 和 colsample_bytree 参数。我们分两个阶段来进行这个步骤。这两个步骤都取0.6,0.7,0.8,0.9作为起始值。</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">param_test4 = &#123;</div><div class="line"> <span class="string">'subsample'</span>:[i/<span class="number">10.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>,<span class="number">10</span>)],</div><div class="line"> <span class="string">'colsample_bytree'</span>:[i/<span class="number">10.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>,<span class="number">10</span>)]</div><div class="line">&#125;</div><div class="line"></div><div class="line">gsearch4 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">177</span>, max_depth=<span class="number">3</span>, min_child_weight=<span class="number">4</span>, gamma=<span class="number">0.1</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test4, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch4.fit(train[predictors],train[target])</div><div class="line">gsearch4.grid_scores_, gsearch4.best_params_, gsearch4.best_score_</div></pre></td></tr></table></figure>
 <pre><code>([mean: 0.83836, std: 0.00840, params: {&#39;subsample&#39;: 0.6, &#39;colsample_bytree&#39;: 0.6},
   mean: 0.83720, std: 0.00976, params: {&#39;subsample&#39;: 0.7, &#39;colsample_bytree&#39;: 0.6},
   mean: 0.83787, std: 0.00758, params: {&#39;subsample&#39;: 0.8, &#39;colsample_bytree&#39;: 0.6},
@@ -600,8 +614,9 @@ AUC Score (Train): 0.883777
   mean: 0.83912, std: 0.00765, params: {&#39;subsample&#39;: 0.8, &#39;colsample_bytree&#39;: 0.9},
   mean: 0.83926, std: 0.00843, params: {&#39;subsample&#39;: 0.9, &#39;colsample_bytree&#39;: 0.9}],
  {&#39;colsample_bytree&#39;: 0.8, &#39;subsample&#39;: 0.9},
- 0.8414372201469303)
-</code></pre><h4 id="从这里可以看出来，subsample-和-colsample-bytree-参数的理想取值都是0-8。现在，我们以0-05为步长，在这个值附近尝试取值。"><a href="#从这里可以看出来，subsample-和-colsample-bytree-参数的理想取值都是0-8。现在，我们以0-05为步长，在这个值附近尝试取值。" class="headerlink" title="从这里可以看出来，subsample 和 colsample_bytree 参数的理想取值都是0.8。现在，我们以0.05为步长，在这个值附近尝试取值。"></a>从这里可以看出来，subsample 和 colsample_bytree 参数的理想取值都是0.8。现在，我们以0.05为步长，在这个值附近尝试取值。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">param_test5 = &#123;</div><div class="line"> <span class="string">'subsample'</span>:[i/<span class="number">100.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">75</span>,<span class="number">90</span>,<span class="number">5</span>)],</div><div class="line"> <span class="string">'colsample_bytree'</span>:[i/<span class="number">100.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">75</span>,<span class="number">90</span>,<span class="number">5</span>)]</div><div class="line">&#125;</div><div class="line">gsearch5 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">177</span>, max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), </div><div class="line"> param_grid = param_test5, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line">gsearch5.fit(train[predictors],train[target])</div><div class="line">gsearch5.grid_scores_, gsearch4.best_params_, gsearch4.best_score_</div></pre></td></tr></table></figure>
+ 0.8414372201469303)</code></pre>
+<h4 id="从这里可以看出来subsample-和-colsample_bytree-参数的理想取值都是0.8现在我们以0.05为步长在这个值附近尝试取值">从这里可以看出来，subsample 和 colsample_bytree 参数的理想取值都是0.8。现在，我们以0.05为步长，在这个值附近尝试取值。</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">param_test5 = &#123;</div><div class="line"> <span class="string">'subsample'</span>:[i/<span class="number">100.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">75</span>,<span class="number">90</span>,<span class="number">5</span>)],</div><div class="line"> <span class="string">'colsample_bytree'</span>:[i/<span class="number">100.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">75</span>,<span class="number">90</span>,<span class="number">5</span>)]</div><div class="line">&#125;</div><div class="line">gsearch5 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">177</span>, max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>, gamma=<span class="number">0</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), </div><div class="line"> param_grid = param_test5, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line">gsearch5.fit(train[predictors],train[target])</div><div class="line">gsearch5.grid_scores_, gsearch4.best_params_, gsearch4.best_score_</div></pre></td></tr></table></figure>
 <pre><code>([mean: 0.83922, std: 0.00800, params: {&#39;subsample&#39;: 0.75, &#39;colsample_bytree&#39;: 0.75},
   mean: 0.84068, std: 0.00664, params: {&#39;subsample&#39;: 0.8, &#39;colsample_bytree&#39;: 0.75},
   mean: 0.84012, std: 0.00744, params: {&#39;subsample&#39;: 0.85, &#39;colsample_bytree&#39;: 0.75},
@@ -612,12 +627,14 @@ AUC Score (Train): 0.883777
   mean: 0.83964, std: 0.00494, params: {&#39;subsample&#39;: 0.8, &#39;colsample_bytree&#39;: 0.85},
   mean: 0.84064, std: 0.00733, params: {&#39;subsample&#39;: 0.85, &#39;colsample_bytree&#39;: 0.85}],
  {&#39;colsample_bytree&#39;: 0.8, &#39;subsample&#39;: 0.9},
- 0.8414372201469303)
-</code></pre><h4 id="我们得到的理想取值还是原来的值。因此，最终的理想取值是"><a href="#我们得到的理想取值还是原来的值。因此，最终的理想取值是" class="headerlink" title="我们得到的理想取值还是原来的值。因此，最终的理想取值是:"></a>我们得到的理想取值还是原来的值。因此，最终的理想取值是:</h4><ul>
+ 0.8414372201469303)</code></pre>
+<h4 id="我们得到的理想取值还是原来的值因此最终的理想取值是">我们得到的理想取值还是原来的值。因此，最终的理想取值是:</h4>
+<ul>
 <li>subsample: 0.8</li>
 <li>colsample_bytree: 0.8</li>
 </ul>
-<h2 id="第五步：正则化参数调优"><a href="#第五步：正则化参数调优" class="headerlink" title="第五步：正则化参数调优"></a>第五步：正则化参数调优</h2><p>下一步是应用正则化来降低过拟合。由于gamma函数提供了一种更加有效地降低过拟合的方法，大部分人很少会用到这个参数。但是我们在这里也可以尝试用一下这个参数。我会在这里调整’reg_alpha’参数，然后’reg_lambda’参数留给你来完成。</p>
+<h2 id="第五步正则化参数调优">第五步：正则化参数调优</h2>
+<p>下一步是应用正则化来降低过拟合。由于gamma函数提供了一种更加有效地降低过拟合的方法，大部分人很少会用到这个参数。但是我们在这里也可以尝试用一下这个参数。我会在这里调整’reg_alpha’参数，然后’reg_lambda’参数留给你来完成。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">param_test6 = &#123;</div><div class="line"> <span class="string">'reg_alpha'</span>:[<span class="number">1e-5</span>, <span class="number">1e-2</span>, <span class="number">0.1</span>, <span class="number">1</span>, <span class="number">100</span>]</div><div class="line">&#125;</div><div class="line">gsearch6 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">177</span>, max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>, gamma=<span class="number">0.1</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), </div><div class="line"> param_grid = param_test6, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line">gsearch6.fit(train[predictors],train[target])</div><div class="line">gsearch6.grid_scores_, gsearch6.best_params_, gsearch6.best_score_</div></pre></td></tr></table></figure>
 <pre><code>([mean: 0.83949, std: 0.00720, params: {&#39;reg_alpha&#39;: 1e-05},
   mean: 0.83940, std: 0.00607, params: {&#39;reg_alpha&#39;: 0.01},
@@ -625,31 +642,37 @@ AUC Score (Train): 0.883777
   mean: 0.84062, std: 0.00775, params: {&#39;reg_alpha&#39;: 1},
   mean: 0.81217, std: 0.01559, params: {&#39;reg_alpha&#39;: 100}],
  {&#39;reg_alpha&#39;: 1},
- 0.8406243437179736)
-</code></pre><h4 id="我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值-0-01-的取值，来看看是否有更好的表现。"><a href="#我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值-0-01-的取值，来看看是否有更好的表现。" class="headerlink" title="我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值(0.01)的取值，来看看是否有更好的表现。"></a>我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值(0.01)的取值，来看看是否有更好的表现。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">param_test7 = &#123;</div><div class="line"> <span class="string">'reg_alpha'</span>:[<span class="number">0</span>, <span class="number">0.001</span>, <span class="number">0.005</span>, <span class="number">0.01</span>, <span class="number">0.05</span>]</div><div class="line">&#125;</div><div class="line">gsearch7 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">177</span>, max_depth=<span class="number">4</span>, min_child_weight=<span class="number">6</span>, gamma=<span class="number">0.1</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test7, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch7.fit(train[predictors],train[target])</div><div class="line">gsearch7.grid_scores_, gsearch7.best_params_, gsearch7.best_score_</div></pre></td></tr></table></figure>
+ 0.8406243437179736)</code></pre>
+<h4 id="我们可以看到相比之前的结果cv的得分甚至还降低了但是我们之前使用的取值是十分粗糙的我们在这里选取一个比较靠近理想值0.01的取值来看看是否有更好的表现">我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值(0.01)的取值，来看看是否有更好的表现。</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">param_test7 = &#123;</div><div class="line"> <span class="string">'reg_alpha'</span>:[<span class="number">0</span>, <span class="number">0.001</span>, <span class="number">0.005</span>, <span class="number">0.01</span>, <span class="number">0.05</span>]</div><div class="line">&#125;</div><div class="line">gsearch7 = GridSearchCV(estimator = XGBClassifier( learning_rate =<span class="number">0.1</span>, n_estimators=<span class="number">177</span>, max_depth=<span class="number">4</span>, min_child_weight=<span class="number">6</span>, gamma=<span class="number">0.1</span>, subsample=<span class="number">0.8</span>, colsample_bytree=<span class="number">0.8</span>, objective= <span class="string">'binary:logistic'</span>, nthread=<span class="number">4</span>, scale_pos_weight=<span class="number">1</span>,seed=<span class="number">27</span>), param_grid = param_test7, scoring=<span class="string">'roc_auc'</span>,n_jobs=<span class="number">4</span>,iid=<span class="keyword">False</span>, cv=<span class="number">5</span>)</div><div class="line"></div><div class="line">gsearch7.fit(train[predictors],train[target])</div><div class="line">gsearch7.grid_scores_, gsearch7.best_params_, gsearch7.best_score_</div></pre></td></tr></table></figure>
 <pre><code>([mean: 0.83949, std: 0.00720, params: {&#39;reg_alpha&#39;: 0},
   mean: 0.83949, std: 0.00720, params: {&#39;reg_alpha&#39;: 0.001},
   mean: 0.83999, std: 0.00658, params: {&#39;reg_alpha&#39;: 0.005},
   mean: 0.83940, std: 0.00607, params: {&#39;reg_alpha&#39;: 0.01},
   mean: 0.83945, std: 0.00693, params: {&#39;reg_alpha&#39;: 0.05}],
  {&#39;reg_alpha&#39;: 0.005},
- 0.8399870466856136)
-</code></pre><h4 id="可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。"><a href="#可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。" class="headerlink" title="可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。"></a>可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">xgb3 = XGBClassifier(</div><div class="line"> learning_rate =<span class="number">0.1</span>,</div><div class="line"> n_estimators=<span class="number">1000</span>,</div><div class="line"> max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>,</div><div class="line"> gamma=<span class="number">0</span>,</div><div class="line"> subsample=<span class="number">0.8</span>,</div><div class="line"> colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> reg_alpha=<span class="number">0.005</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>,</div><div class="line"> nthread=<span class="number">4</span>,</div><div class="line"> scale_pos_weight=<span class="number">1</span>,</div><div class="line"> seed=<span class="number">27</span>)</div><div class="line">modelfit(xgb3, train, predictors)</div></pre></td></tr></table></figure>
+ 0.8399870466856136)</code></pre>
+<h4 id="可以看到cv的得分提高了现在我们在模型中来使用正则化参数来看看这个参数的影响">可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">xgb3 = XGBClassifier(</div><div class="line"> learning_rate =<span class="number">0.1</span>,</div><div class="line"> n_estimators=<span class="number">1000</span>,</div><div class="line"> max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>,</div><div class="line"> gamma=<span class="number">0</span>,</div><div class="line"> subsample=<span class="number">0.8</span>,</div><div class="line"> colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> reg_alpha=<span class="number">0.005</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>,</div><div class="line"> nthread=<span class="number">4</span>,</div><div class="line"> scale_pos_weight=<span class="number">1</span>,</div><div class="line"> seed=<span class="number">27</span>)</div><div class="line">modelfit(xgb3, train, predictors)</div></pre></td></tr></table></figure>
 <pre><code>Model Report
 Accuracy : 0.9854
-AUC Score (Train): 0.883621
-</code></pre><p><img src="/2017/09/01/XGBoostDemo/output_34_1.png" alt="png"></p>
-<h5 id="然后我们发现性能有了小幅度提高。"><a href="#然后我们发现性能有了小幅度提高。" class="headerlink" title="然后我们发现性能有了小幅度提高。"></a>然后我们发现性能有了小幅度提高。</h5><h2 id="第6步：降低学习速率"><a href="#第6步：降低学习速率" class="headerlink" title="第6步：降低学习速率"></a>第6步：降低学习速率</h2><p>最后，我们使用较低的学习速率，以及使用更多的决策树。我们可以用XGBoost中的CV函数来进行这一步工作。</p>
+AUC Score (Train): 0.883621</code></pre>
+<div class="figure">
+<img src="/2017/09/01/XGBoostDemo/output_34_1.png" alt="png">
+<p class="caption">png</p>
+</div>
+<h5 id="然后我们发现性能有了小幅度提高">然后我们发现性能有了小幅度提高。</h5>
+<h2 id="第6步降低学习速率">第6步：降低学习速率</h2>
+<p>最后，我们使用较低的学习速率，以及使用更多的决策树。我们可以用XGBoost中的CV函数来进行这一步工作。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">xgb4 = XGBClassifier(</div><div class="line"> learning_rate =<span class="number">0.01</span>,</div><div class="line"> n_estimators=<span class="number">5000</span>,</div><div class="line"> max_depth=<span class="number">4</span>,</div><div class="line"> min_child_weight=<span class="number">6</span>,</div><div class="line"> gamma=<span class="number">0</span>,</div><div class="line"> subsample=<span class="number">0.8</span>,</div><div class="line"> colsample_bytree=<span class="number">0.8</span>,</div><div class="line"> reg_alpha=<span class="number">0.005</span>,</div><div class="line"> objective= <span class="string">'binary:logistic'</span>,</div><div class="line"> nthread=<span class="number">4</span>,</div><div class="line"> scale_pos_weight=<span class="number">1</span>,</div><div class="line"> seed=<span class="number">27</span>)</div><div class="line">modelfit(xgb4, train, predictors)</div></pre></td></tr></table></figure>
 <pre><code>Model Report
 Accuracy : 0.9854
-AUC Score (Train): 0.884030
-</code></pre><p><img src="/2017/09/01/XGBoostDemo/output_37_1.png" alt="png"></p>
-<p>至此，你可以看到模型的表现有了大幅提升，调整每个参数带来的影响也更加清楚了。<br>在文章的末尾，我想分享两个重要的思想： </p>
-<ol>
-<li>仅仅靠参数的调整和模型的小幅优化，想要让模型的表现有个大幅度提升是不可能的。GBM的最高得分是0.8487，XGBoost的最高得分是0.8494。确实是有一定的提升，但是没有达到质的飞跃。 </li>
-<li>要想让模型的表现有一个质的飞跃，需要依靠其他的手段，诸如，特征工程(feature egineering) ，模型组合(ensemble of model),以及堆叠(stacking)等。</li>
-</ol>
+AUC Score (Train): 0.884030</code></pre>
+<div class="figure">
+<img src="/2017/09/01/XGBoostDemo/output_37_1.png" alt="png">
+<p class="caption">png</p>
+</div>
+<p>至此，你可以看到模型的表现有了大幅提升，调整每个参数带来的影响也更加清楚了。 在文章的末尾，我想分享两个重要的思想： 1. 仅仅靠参数的调整和模型的小幅优化，想要让模型的表现有个大幅度提升是不可能的。GBM的最高得分是0.8487，XGBoost的最高得分是0.8494。确实是有一定的提升，但是没有达到质的飞跃。 2. 要想让模型的表现有一个质的飞跃，需要依靠其他的手段，诸如，特征工程(feature egineering) ，模型组合(ensemble of model),以及堆叠(stacking)等。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
 
       
@@ -773,7 +796,7 @@ AUC Score (Train): 0.884030
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -830,7 +853,7 @@ AUC Score (Train): 0.884030
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XGBOOST的参数"><span class="nav-number">1.</span> <span class="nav-text">XGBOOST的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用参数"><span class="nav-number">1.1.</span> <span class="nav-text">通用参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#booster-默认gbtree"><span class="nav-number">1.1.1.</span> <span class="nav-text">booster[默认gbtree]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#silent-默认0"><span class="nav-number">1.1.2.</span> <span class="nav-text">silent[默认0]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nthread-默认值为最大可能的线程数"><span class="nav-number">1.1.3.</span> <span class="nav-text">nthread[默认值为最大可能的线程数]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#booster参数"><span class="nav-number">1.2.</span> <span class="nav-text">booster参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#尽管有两种booster可供选择，我这里只介绍tree-booster，因为它的表现远远胜过linear-booster，所以linear-booster很少用到。"><span class="nav-number">1.2.1.</span> <span class="nav-text">尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eta-默认0-3"><span class="nav-number">1.2.2.</span> <span class="nav-text">eta[默认0.3]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#min-child-weight-默认1"><span class="nav-number">1.2.3.</span> <span class="nav-text">min_child_weight[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-depth-默认6"><span class="nav-number">1.2.4.</span> <span class="nav-text">max_depth[默认6]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-leaf-nodes"><span class="nav-number">1.2.5.</span> <span class="nav-text">max_leaf_nodes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gamma-默认0"><span class="nav-number">1.2.6.</span> <span class="nav-text">gamma[默认0]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-delta-step-默认0"><span class="nav-number">1.2.7.</span> <span class="nav-text">max_delta_step[默认0]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#subsample-默认1"><span class="nav-number">1.2.8.</span> <span class="nav-text">subsample[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#colsample-bytree-默认1"><span class="nav-number">1.2.9.</span> <span class="nav-text">colsample_bytree[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#colsample-bylevel-默认1"><span class="nav-number">1.2.10.</span> <span class="nav-text">colsample_bylevel[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lambda-默认1"><span class="nav-number">1.2.11.</span> <span class="nav-text">lambda[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#alpha-默认1"><span class="nav-number">1.2.12.</span> <span class="nav-text">alpha[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cale-pos-weight-默认1"><span class="nav-number">1.2.13.</span> <span class="nav-text">cale_pos_weight[默认1]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习目标参数"><span class="nav-number">2.</span> <span class="nav-text">学习目标参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这个参数用来控制理想的优化目标和每一步结果的度量方法。"><span class="nav-number">2.1.</span> <span class="nav-text">这个参数用来控制理想的优化目标和每一步结果的度量方法。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#objective-默认reg-linear"><span class="nav-number">2.1.1.</span> <span class="nav-text">objective[默认reg:linear]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-metric-默认值取决于objective参数的取值"><span class="nav-number">2.1.2.</span> <span class="nav-text">eval_metric[默认值取决于objective参数的取值]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#seed-默认0"><span class="nav-number">2.1.3.</span> <span class="nav-text">seed(默认0)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eta-gt-learning-rate"><span class="nav-number">2.1.4.</span> <span class="nav-text">eta ->learning_rate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lambda-gt-reg-lambda"><span class="nav-number">2.1.5.</span> <span class="nav-text">lambda->reg_lambda</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#alpha-gt-reg-alpha"><span class="nav-number">2.1.6.</span> <span class="nav-text">alpha->reg_alpha</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数调优的一般方法"><span class="nav-number">2.2.</span> <span class="nav-text">参数调优的一般方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：确定学习速率和tree-based-参数调优的估计器数目"><span class="nav-number">2.3.</span> <span class="nav-text">第一步：确定学习速率和tree_based 参数调优的估计器数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从输出结果可以看出，在学习速率为0-1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。"><span class="nav-number">2.3.1.</span> <span class="nav-text">从输出结果可以看出，在学习速率为0.1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步：-max-depth-和-min-weight-参数调优"><span class="nav-number">2.3.2.</span> <span class="nav-text">第二步： max_depth 和 min_weight 参数调优</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max-depth值为5，理想的min-child-weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。"><span class="nav-number">2.3.3.</span> <span class="nav-text">至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max_depth值为5，理想的min_child_weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#至此，我们得到max-depth的理想取值为4，min-child-weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min-child-weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。"><span class="nav-number">2.3.4.</span> <span class="nav-text">至此，我们得到max_depth的理想取值为4，min_child_weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min_child_weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们可以看出，6确确实实是理想的取值了。"><span class="nav-number">2.3.5.</span> <span class="nav-text">我们可以看出，6确确实实是理想的取值了。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：gamma参数调优"><span class="nav-number">2.4.</span> <span class="nav-text">第三步：gamma参数调优</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。"><span class="nav-number">2.4.1.</span> <span class="nav-text">在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。"><span class="nav-number">2.4.2.</span> <span class="nav-text">从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从这里，可以看出，得分提高了。所以，最终得到的参数是："><span class="nav-number">2.4.3.</span> <span class="nav-text">从这里，可以看出，得分提高了。所以，最终得到的参数是：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整subsample-和-colsample-bytree-参数"><span class="nav-number">3.</span> <span class="nav-text">调整subsample 和 colsample_bytree 参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下一步是尝试不同的subsample-和-colsample-bytree-参数。我们分两个阶段来进行这个步骤。这两个步骤都取0-6-0-7-0-8-0-9作为起始值。"><span class="nav-number">3.0.1.</span> <span class="nav-text">下一步是尝试不同的subsample 和 colsample_bytree 参数。我们分两个阶段来进行这个步骤。这两个步骤都取0.6,0.7,0.8,0.9作为起始值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从这里可以看出来，subsample-和-colsample-bytree-参数的理想取值都是0-8。现在，我们以0-05为步长，在这个值附近尝试取值。"><span class="nav-number">3.0.2.</span> <span class="nav-text">从这里可以看出来，subsample 和 colsample_bytree 参数的理想取值都是0.8。现在，我们以0.05为步长，在这个值附近尝试取值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们得到的理想取值还是原来的值。因此，最终的理想取值是"><span class="nav-number">3.0.3.</span> <span class="nav-text">我们得到的理想取值还是原来的值。因此，最终的理想取值是:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步：正则化参数调优"><span class="nav-number">4.</span> <span class="nav-text">第五步：正则化参数调优</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值-0-01-的取值，来看看是否有更好的表现。"><span class="nav-number">4.0.1.</span> <span class="nav-text">我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值(0.01)的取值，来看看是否有更好的表现。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。"><span class="nav-number">4.0.2.</span> <span class="nav-text">可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#然后我们发现性能有了小幅度提高。"><span class="nav-number">4.0.2.1.</span> <span class="nav-text">然后我们发现性能有了小幅度提高。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6步：降低学习速率"><span class="nav-number">5.</span> <span class="nav-text">第6步：降低学习速率</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost的参数"><span class="nav-number">1.</span> <span class="nav-text">XGBOOST的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用参数"><span class="nav-number">1.1.</span> <span class="nav-text">通用参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#booster默认gbtree"><span class="nav-number">1.1.1.</span> <span class="nav-text">booster[默认gbtree]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#silent默认0"><span class="nav-number">1.1.2.</span> <span class="nav-text">silent[默认0]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nthread默认值为最大可能的线程数"><span class="nav-number">1.1.3.</span> <span class="nav-text">nthread[默认值为最大可能的线程数]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#booster参数"><span class="nav-number">1.2.</span> <span class="nav-text">booster参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#尽管有两种booster可供选择我这里只介绍tree-booster因为它的表现远远胜过linear-booster所以linear-booster很少用到"><span class="nav-number">1.2.1.</span> <span class="nav-text">尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eta默认0.3"><span class="nav-number">1.2.2.</span> <span class="nav-text">eta[默认0.3]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#min_child_weight默认1"><span class="nav-number">1.2.3.</span> <span class="nav-text">min_child_weight[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max_depth默认6"><span class="nav-number">1.2.4.</span> <span class="nav-text">max_depth[默认6]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max_leaf_nodes"><span class="nav-number">1.2.5.</span> <span class="nav-text">max_leaf_nodes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gamma默认0"><span class="nav-number">1.2.6.</span> <span class="nav-text">gamma[默认0]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max_delta_step默认0"><span class="nav-number">1.2.7.</span> <span class="nav-text">max_delta_step[默认0]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#subsample默认1"><span class="nav-number">1.2.8.</span> <span class="nav-text">subsample[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#colsample_bytree默认1"><span class="nav-number">1.2.9.</span> <span class="nav-text">colsample_bytree[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#colsample_bylevel默认1"><span class="nav-number">1.2.10.</span> <span class="nav-text">colsample_bylevel[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lambda默认1"><span class="nav-number">1.2.11.</span> <span class="nav-text">lambda[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#alpha默认1"><span class="nav-number">1.2.12.</span> <span class="nav-text">alpha[默认1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cale_pos_weight默认1"><span class="nav-number">1.2.13.</span> <span class="nav-text">cale_pos_weight[默认1]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习目标参数"><span class="nav-number">2.</span> <span class="nav-text">学习目标参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这个参数用来控制理想的优化目标和每一步结果的度量方法"><span class="nav-number">2.1.</span> <span class="nav-text">这个参数用来控制理想的优化目标和每一步结果的度量方法。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#objective默认reglinear"><span class="nav-number">2.1.1.</span> <span class="nav-text">objective[默认reg:linear]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval_metric默认值取决于objective参数的取值"><span class="nav-number">2.1.2.</span> <span class="nav-text">eval_metric[默认值取决于objective参数的取值]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#seed默认0"><span class="nav-number">2.1.3.</span> <span class="nav-text">seed(默认0)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数调优的一般方法"><span class="nav-number">2.2.</span> <span class="nav-text">参数调优的一般方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步确定学习速率和tree_based-参数调优的估计器数目"><span class="nav-number">2.3.</span> <span class="nav-text">第一步：确定学习速率和tree_based 参数调优的估计器数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从输出结果可以看出在学习速率为0.1时理想的决策树数目是140这个数字对你而言可能比较高当然这也取决于你的系统的性能"><span class="nav-number">2.3.1.</span> <span class="nav-text">从输出结果可以看出，在学习速率为0.1时，理想的决策树数目是140。这个数字对你而言可能比较高，当然这也取决于你的系统的性能。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步-max_depth-和-min_weight-参数调优"><span class="nav-number">2.3.2.</span> <span class="nav-text">第二步： max_depth 和 min_weight 参数调优</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#至此我们对于数值进行了较大跨度的12中不同的排列组合可以看出理想的max_depth值为5理想的min_child_weight值为5在这个值附近我们可以再进一步调整来找出理想值我们把上下范围各拓展1因为之前我们进行组合的时候参数调整的步长是2"><span class="nav-number">2.3.3.</span> <span class="nav-text">至此，我们对于数值进行了较大跨度的12中不同的排列组合，可以看出理想的max_depth值为5，理想的min_child_weight值为5。在这个值附近我们可以再进一步调整，来找出理想值。我们把上下范围各拓展1，因为之前我们进行组合的时候，参数调整的步长是2。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#至此我们得到max_depth的理想取值为4min_child_weight的理想取值为6同时我们还能看到cv的得分有了小小一点提高需要注意的一点是随着模型表现的提升进一步提升的难度是指数级上升的尤其是你的表现已经接近完美的时候当然啦你会发现虽然min_child_weight的理想取值是6但是我们还没尝试过大于6的取值像下面这样就可以尝试其它值"><span class="nav-number">2.3.4.</span> <span class="nav-text">至此，我们得到max_depth的理想取值为4，min_child_weight的理想取值为6。同时，我们还能看到cv的得分有了小小一点提高。需要注意的一点是，随着模型表现的提升，进一步提升的难度是指数级上升的，尤其是你的表现已经接近完美的时候。当然啦，你会发现，虽然min_child_weight的理想取值是6，但是我们还没尝试过大于6的取值。像下面这样，就可以尝试其它值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们可以看出6确确实实是理想的取值了"><span class="nav-number">2.3.5.</span> <span class="nav-text">我们可以看出，6确确实实是理想的取值了。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步gamma参数调优"><span class="nav-number">2.4.</span> <span class="nav-text">第三步：gamma参数调优</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在已经调整好其它参数的基础上我们可以进行gamma参数的调优了gamma参数取值范围可以很大我这里把取值范围设置为5了你其实也可以取更精确的gamma值"><span class="nav-number">2.4.1.</span> <span class="nav-text">在已经调整好其它参数的基础上，我们可以进行gamma参数的调优了。Gamma参数取值范围可以很大，我这里把取值范围设置为5了。你其实也可以取更精确的gamma值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从这里可以看出来我们在第一步调参时设置的初始gamma值就是比较合适的也就是说理想的gamma值为0在这个过程开始之前最好重新调整boosting回合因为参数都有变化"><span class="nav-number">2.4.2.</span> <span class="nav-text">从这里可以看出来，我们在第一步调参时设置的初始gamma值就是比较合适的。也就是说，理想的gamma值为0。在这个过程开始之前，最好重新调整boosting回合，因为参数都有变化。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从这里可以看出得分提高了所以最终得到的参数是"><span class="nav-number">2.4.3.</span> <span class="nav-text">从这里，可以看出，得分提高了。所以，最终得到的参数是：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整subsample-和-colsample_bytree-参数"><span class="nav-number">3.</span> <span class="nav-text">调整subsample 和 colsample_bytree 参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下一步是尝试不同的subsample-和-colsample_bytree-参数我们分两个阶段来进行这个步骤这两个步骤都取0.60.70.80.9作为起始值"><span class="nav-number">3.0.1.</span> <span class="nav-text">下一步是尝试不同的subsample 和 colsample_bytree 参数。我们分两个阶段来进行这个步骤。这两个步骤都取0.6,0.7,0.8,0.9作为起始值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从这里可以看出来subsample-和-colsample_bytree-参数的理想取值都是0.8现在我们以0.05为步长在这个值附近尝试取值"><span class="nav-number">3.0.2.</span> <span class="nav-text">从这里可以看出来，subsample 和 colsample_bytree 参数的理想取值都是0.8。现在，我们以0.05为步长，在这个值附近尝试取值。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们得到的理想取值还是原来的值因此最终的理想取值是"><span class="nav-number">3.0.3.</span> <span class="nav-text">我们得到的理想取值还是原来的值。因此，最终的理想取值是:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步正则化参数调优"><span class="nav-number">4.</span> <span class="nav-text">第五步：正则化参数调优</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我们可以看到相比之前的结果cv的得分甚至还降低了但是我们之前使用的取值是十分粗糙的我们在这里选取一个比较靠近理想值0.01的取值来看看是否有更好的表现"><span class="nav-number">4.0.1.</span> <span class="nav-text">我们可以看到，相比之前的结果，CV的得分甚至还降低了。但是我们之前使用的取值是十分粗糙的，我们在这里选取一个比较靠近理想值(0.01)的取值，来看看是否有更好的表现。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以看到cv的得分提高了现在我们在模型中来使用正则化参数来看看这个参数的影响"><span class="nav-number">4.0.2.</span> <span class="nav-text">可以看到，CV的得分提高了。现在，我们在模型中来使用正则化参数，来看看这个参数的影响。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#然后我们发现性能有了小幅度提高"><span class="nav-number">4.0.2.1.</span> <span class="nav-text">然后我们发现性能有了小幅度提高。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6步降低学习速率"><span class="nav-number">5.</span> <span class="nav-text">第6步：降低学习速率</span></a></li></ol></div>
             
 
           </div>
